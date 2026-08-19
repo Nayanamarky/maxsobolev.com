@@ -57,6 +57,12 @@ const [first] = videos;
   // подменяет ролик в этом же плеере и сразу запускает воспроизведение — отдельная
   // страница на каждый ролик тут не нужна, все ролики одного проекта смотрятся
   // в одном месте.
+  //
+  // Кадр не панорамируется на hover: сдвиг одной статичной фотографии не показывает
+  // разные моменты отснятого материала, это просто «дёрганье картинки». Настоящий
+  // скраб (video-seek или спрайт реальных кадров) — отдельная задача, см.
+  // «Задачи разработки/01_concept.md». Таймкод и полоса остаются — честный UI-мотив,
+  // не привязанный к содержимому кадра.
   const FPS = 24;
   const NOMINAL_SECONDS = 60;
 
@@ -65,22 +71,19 @@ const [first] = videos;
 
   if (hero && media) {
     const bindIdle = () => {
-      const frame = media.querySelector<HTMLElement>('.scrubplayer-frame');
       const bar = media.querySelector<HTMLElement>('.scrubplayer-bar');
       const tc = media.querySelector<HTMLElement>('.scrubplayer-tc');
       const playBtn = media.querySelector<HTMLButtonElement>('.scrubplayer-play');
-      if (!frame || !bar || !tc) return;
+      if (!bar || !tc) return;
 
       media.onmouseleave = () => {
         bar.style.width = '0';
         tc.textContent = '00:00:00';
-        frame.style.backgroundPosition = '20% 30%';
       };
 
       media.onmousemove = (e) => {
         const r = media.getBoundingClientRect();
         const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-        frame.style.backgroundPosition = `${20 + x * 60}% ${30 + x * 20}%`;
         bar.style.width = `${x * 100}%`;
 
         const totalFrames = Math.floor(x * NOMINAL_SECONDS * FPS);

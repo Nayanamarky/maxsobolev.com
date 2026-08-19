@@ -40,28 +40,27 @@ const productionLabel = production ? t(`production.${production}` as UIKey) : nu
 </a>
 
 <script>
-  // Скраб: курсор панорамирует по кадру, полоса и таймкод — оба от позиции курсора
-  // по горизонтали, не от времени наведения. Условная длина «клипа» — 60 секунд по 24 fps,
-  // просто чтобы было что показывать в формате таймкода.
+  // Таймкод и полоса — от позиции курсора по горизонтали. Кадр больше не панорамируется:
+  // сдвиг одной статичной фотографии не показывает разные моменты отснятого материала,
+  // это просто «дёрганье картинки». Настоящий скраб (video-seek или спрайт реальных
+  // кадров) — отдельная задача, см. «Задачи разработки/01_concept.md». Условная длина
+  // «клипа» — 60 секунд по 24 fps, просто чтобы было что показывать в формате таймкода.
   const FPS = 24;
   const NOMINAL_SECONDS = 60;
 
   document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
-    const frame = tile.querySelector<HTMLElement>('.frame');
     const bar = tile.querySelector<HTMLElement>('.bar');
     const tc = tile.querySelector<HTMLElement>('.tc');
-    if (!frame || !bar || !tc) return;
+    if (!bar || !tc) return;
 
     tile.addEventListener('mouseleave', () => {
       bar.style.width = '0';
       tc.textContent = '00:00:00';
-      frame.style.backgroundPosition = '20% 30%';
     });
 
     tile.addEventListener('mousemove', (e) => {
       const r = tile.getBoundingClientRect();
       const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-      frame.style.backgroundPosition = `${20 + x * 60}% ${30 + x * 20}%`;
       bar.style.width = `${x * 100}%`;
 
       const totalFrames = Math.floor(x * NOMINAL_SECONDS * FPS);
