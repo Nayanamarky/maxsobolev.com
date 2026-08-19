@@ -156,7 +156,6 @@ header {
 .proj h1 { font-size: 34px; font-weight: 500; letter-spacing: -.01em }
 .projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
 .projmeta .prod { color: var(--scrub) }
-.projrole { font-size: 13px; color: var(--ink); margin-top: 14px }
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 

@@ -24,15 +24,13 @@ interface Props {
   year: number;
   categories: string[];
   production?: 'shoot' | 'cg';
-  role?: { ru: string; en: string };
   cover: string;
   videos?: Video[];
   prev: Neighbour | null;
   next: Neighbour | null;
 }
 
-const { locale, id, title, client, year, categories, production, role, cover, videos, prev, next } =
-  Astro.props;
+const { locale, id, title, client, year, categories, production, cover, videos, prev, next } = Astro.props;
 const t = useTranslations(locale);
 const path = `/project/${id}`;
 const productionLabel = production ? t(`production.${production}` as UIKey) : null;
@@ -51,8 +49,6 @@ const [heroVideo, ...restVideos] = videos ?? [];
       {client} · {year} · {categories.join(' · ')}
       {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
     </div>
-    {role && <div class="projrole">{role[locale]}</div>}
-
     <div class="body">
       <slot />
     </div>
