@@ -1,0 +1,46 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const filters = [
+  { key: 'all', label: t('filter.all') },
+  { key: 'cg', label: t('filter.cg') },
+  { key: 'vfx', label: t('filter.vfx') },
+  { key: 'realtime', label: t('filter.realtime') },
+  { key: 'direction', label: t('filter.direction') },
+];
+---
+
+<div class="filters" id="filters">
+  {
+    filters.map((f) => (
+      <button class={f.key === 'all' ? 'active' : undefined} data-f={f.key}>
+        {f.label}
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  const filters = document.getElementById('filters');
+
+  filters?.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest('button');
+    if (!b) return;
+
+    filters.querySelectorAll('button').forEach((x) => x.classList.remove('active'));
+    b.classList.add('active');
+
+    const f = b.dataset.f;
+    document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
+      const cats = (tile.dataset.cat ?? '').split(' ');
+      tile.classList.toggle('hidden', f !== 'all' && !cats.includes(f!));
+    });
+  });
+</script>

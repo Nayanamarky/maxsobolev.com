@@ -1,0 +1,10 @@
+---
+title: "Color Bars"
+client: "Apple TV"
+year: 2023
+categories: [vfx]
+cover: "/placeholder/frame-02.jpg"
+order: 8
+---
+
+> Заглушка из прототипа. Заменить на реальный проект: клиента, год, роль, кадры.

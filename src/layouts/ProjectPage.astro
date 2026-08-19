@@ -1,0 +1,61 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import ToTop from '../components/ToTop.astro';
+import { useTranslations, localePath, type Locale } from '../i18n/ui';
+
+interface Neighbour {
+  id: string;
+  title: string;
+}
+
+interface Props {
+  locale: Locale;
+  id: string;
+  title: string;
+  client: string;
+  year: number;
+  categories: string[];
+  cover: string;
+  prev: Neighbour | null;
+  next: Neighbour | null;
+}
+
+const { locale, id, title, client, year, categories, cover, prev, next } = Astro.props;
+const t = useTranslations(locale);
+const path = `/project/${id}`;
+
+// Заглушка: страница проекта ещё не спроектирована — см. «Задачи разработки/02_spec.md».
+const stub =
+  locale === 'ru'
+    ? 'Страница проекта ещё не спроектирована. Каркас: герой → роль/клиент/год → мой вклад → кадры и breakdown → кредиты → пред/след.'
+    : 'The project page is not designed yet. Skeleton: hero → role/client/year → contribution → frames and breakdowns → credits → prev/next.';
+---
+
+<Base locale={locale} path={path} title={`${title} — ${client}`}>
+  <Header locale={locale} path={path} />
+
+  <div class="projhero" style={`background-image:url('${cover}')`}></div>
+
+  <article class="proj">
+    <h1>{title}</h1>
+    <div class="projmeta mono">
+      {client} · {year} · {categories.join(' · ')}
+    </div>
+    <p class="stub">{stub}</p>
+  </article>
+
+  <nav class="prevnext mono">
+    {
+      prev ? (
+        <a href={localePath(locale, `/project/${prev.id}`)}>← {prev.title}</a>
+      ) : (
+        <span />
+      )
+    }
+    {next && <a href={localePath(locale, `/project/${next.id}`)}>{next.title} →</a>}
+  </nav>
+
+  <footer class="mono">{t('footer')}</footer>
+  <ToTop locale={locale} />
+</Base>

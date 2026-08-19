@@ -1,0 +1,77 @@
+---
+import { localePath, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  id: string;
+  title: string;
+  client: string;
+  year: number;
+  categories: string[];
+  cover: string;
+  index: number;
+  total: number;
+}
+
+const { locale, id, title, client, year, categories, cover, index, total } = Astro.props;
+const idx = String(index).padStart(2, '0');
+const totalStr = String(total).padStart(2, '0');
+---
+
+<a class="tile" href={localePath(locale, `/project/${id}`)} data-cat={categories.join(' ')}>
+  <div class="frame" style={`background-image:url('${cover}')`}></div>
+  <div class="veil"></div>
+  <div class="idx mono">{idx} / {totalStr}</div>
+  <div class="meta">
+    <div class="title">{title}</div>
+    <div class="sub mono">{client} · {year}</div>
+  </div>
+  <div class="scrubwrap">
+    <div class="bar"></div>
+    <div class="tc mono">00:00:00</div>
+  </div>
+</a>
+
+<script>
+  // Скраб: курсор панорамирует по кадру, бежит таймкод 24 fps, полоса показывает позицию.
+  const FPS = 24;
+  const FRAME_MS = 1000 / FPS;
+
+  document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
+    const frame = tile.querySelector<HTMLElement>('.frame');
+    const bar = tile.querySelector<HTMLElement>('.bar');
+    const tc = tile.querySelector<HTMLElement>('.tc');
+    if (!frame || !bar || !tc) return;
+
+    let raf: number | null = null;
+    let start = 0;
+
+    const tick = () => {
+      const ms = performance.now() - start;
+      const f = Math.floor(ms / FRAME_MS) % FPS;
+      const s = Math.floor(ms / 1000) % 60;
+      tc.textContent = `00:00:${String(s).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
+      raf = requestAnimationFrame(tick);
+    };
+
+    tile.addEventListener('mouseenter', () => {
+      start = performance.now();
+      tick();
+    });
+
+    tile.addEventListener('mouseleave', () => {
+      if (raf !== null) cancelAnimationFrame(raf);
+      raf = null;
+      bar.style.width = '0';
+      tc.textContent = '00:00:00';
+      frame.style.backgroundPosition = '20% 30%';
+    });
+
+    tile.addEventListener('mousemove', (e) => {
+      const r = tile.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      frame.style.backgroundPosition = `${20 + x * 60}% ${30 + x * 20}%`;
+      bar.style.width = `${x * 100}%`;
+    });
+  });
+</script>

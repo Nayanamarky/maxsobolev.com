@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectPage from '../../layouts/ProjectPage.astro';
+import { projectPaths } from '../../lib/projectPaths';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => !data.draft);
+  return projectPaths(projects);
+}
+
+const { project, prev, next } = Astro.props;
+---
+
+<ProjectPage
+  locale="ru"
+  id={project.id}
+  title={project.data.title}
+  client={project.data.client}
+  year={project.data.year}
+  categories={project.data.categories}
+  cover={project.data.cover}
+  prev={prev}
+  next={next}
+/>

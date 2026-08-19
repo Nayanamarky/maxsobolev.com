@@ -1,0 +1,11 @@
+---
+import StubPage from '../layouts/StubPage.astro';
+
+export function getStaticPaths() {
+  return [{ params: { page: 'about' } }, { params: { page: 'contact' } }, { params: { page: 'posts' } }];
+}
+
+const { page } = Astro.params;
+---
+
+<StubPage locale="ru" page={page as 'about' | 'contact' | 'posts'} />

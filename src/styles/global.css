@@ -1,0 +1,144 @@
+:root {
+  --bg: #0b0c0e;
+  --panel: #131519;
+  --line: #23262c;
+  --ink: #e9ebee;
+  --dim: #7a8089;
+  --scrub: #d7e3ea;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0 }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none }
+.mono { font-family: "JetBrains Mono", monospace }
+
+/* ── Шапка ─────────────────────────────────────────── */
+header {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 22px;
+  background: linear-gradient(var(--bg), rgba(11, 12, 14, .75) 70%, rgba(11, 12, 14, 0));
+}
+.brand .name { font-weight: 700; letter-spacing: .06em; font-size: 15px; line-height: 1 }
+.brand .role { font-size: 10px; letter-spacing: .22em; color: var(--dim); margin-top: 5px }
+
+.menuzone { position: relative }
+.burger {
+  width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 2px; background: transparent;
+  display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color .2s;
+}
+.burger:hover { border-color: var(--dim) }
+.burger span { width: 16px; height: 1.5px; background: var(--ink); transition: .25s }
+.burger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg) }
+.burger.open span:nth-child(2) { opacity: 0 }
+.burger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg) }
+
+/* выпадающее меню у бургера */
+.dropdown {
+  position: absolute; top: 52px; right: 0; width: 230px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 8px;
+  opacity: 0; transform: translateY(-6px) scale(.98); transform-origin: top right;
+  pointer-events: none; transition: .2s; box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+}
+.dropdown.open { opacity: 1; transform: none; pointer-events: auto }
+.dropdown a {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 11px 12px; border-radius: 3px; font-size: 15px; color: var(--ink); transition: background .15s;
+}
+.dropdown a:hover { background: #1c1f25 }
+.dropdown a .en { font-size: 9px; letter-spacing: .2em; color: var(--dim) }
+.dropdown .sep { height: 1px; background: var(--line); margin: 6px 8px }
+.dropdown .foot { font-size: 9px; letter-spacing: .16em; color: var(--dim); padding: 8px 12px 4px }
+
+/* переключатель языка в меню */
+.dropdown .lang { display: flex; gap: 10px; padding: 8px 12px 4px; font-size: 9px; letter-spacing: .2em }
+.dropdown .lang a { display: inline; padding: 0; color: var(--dim) }
+.dropdown .lang a:hover { background: transparent; color: var(--ink) }
+.dropdown .lang a[aria-current="true"] { color: var(--scrub) }
+
+/* ── Фильтры ───────────────────────────────────────── */
+.filters { display: flex; gap: 2px; padding: 0 22px 14px; flex-wrap: wrap }
+.filters button {
+  font-family: inherit; font-size: 11px; letter-spacing: .14em; color: var(--dim);
+  background: transparent; border: none; padding: 6px 12px 6px 0; cursor: pointer; transition: color .2s;
+}
+.filters button:hover, .filters button.active { color: var(--ink) }
+.filters button.active::after { content: ""; display: block; height: 1px; background: var(--scrub); margin-top: 4px }
+
+/* ── Сетка ─────────────────────────────────────────── */
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr } }
+
+/* ── Плитка ────────────────────────────────────────── */
+.tile { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--panel); cursor: pointer; isolation: isolate }
+.tile.hidden { display: none }
+.tile .frame {
+  position: absolute; inset: 0; background-size: 200% 200%; background-position: 20% 30%;
+  transition: filter .4s, transform .4s; filter: saturate(.85) brightness(.92);
+}
+.tile:hover .frame { filter: saturate(1.05) brightness(1.05); transform: scale(1.02) }
+.tile .veil {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(180deg, rgba(6, 7, 9, .05), rgba(6, 7, 9, .72)); opacity: .5; transition: opacity .35s;
+}
+.tile:hover .veil { opacity: .92 }
+.tile .meta { position: absolute; left: 16px; bottom: 14px; right: 16px; z-index: 3 }
+.tile .title { font-size: 19px; font-weight: 500; transform: translateY(6px); opacity: 0; transition: .35s }
+.tile:hover .title { transform: none; opacity: 1 }
+.tile .sub { font-size: 10px; letter-spacing: .16em; color: var(--dim); margin-top: 6px; text-transform: uppercase; opacity: 0; transition: .35s .05s }
+.tile:hover .sub { opacity: 1 }
+.tile .idx { position: absolute; left: 14px; top: 12px; z-index: 3; font-size: 10px; color: #cfd4da; letter-spacing: .12em; text-shadow: 0 1px 3px rgba(0, 0, 0, .6) }
+.tile .scrubwrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: 0; transition: opacity .3s }
+.tile:hover .scrubwrap { opacity: 1 }
+.tile .tc { position: absolute; right: 12px; bottom: 12px; font-size: 10px; color: var(--scrub); letter-spacing: .08em }
+.tile .bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--scrub) }
+
+/* фокус с клавиатуры — плитка это ссылка */
+.tile:focus-visible { outline: 1px solid var(--scrub); outline-offset: -2px }
+.tile:focus-visible .title, .tile:focus-visible .sub { transform: none; opacity: 1 }
+
+/* ── Кнопка наверх ─────────────────────────────────── */
+.totop {
+  position: fixed; right: 22px; bottom: 22px; z-index: 45; width: 44px; height: 44px; border-radius: 3px;
+  background: var(--panel); border: 1px solid var(--line); color: var(--ink); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+  opacity: 0; transform: translateY(10px); pointer-events: none; transition: .25s;
+}
+.totop.show { opacity: 1; transform: none; pointer-events: auto }
+.totop:hover { border-color: var(--dim) }
+
+/* ── Страница проекта (черновая, ждёт спеки) ───────── */
+.projhero {
+  height: 60vh; min-height: 320px;
+  background-size: cover; background-position: center;
+  border-bottom: 1px solid var(--line);
+  filter: saturate(.9) brightness(.85);
+}
+.proj { max-width: 760px; margin: 0 auto; padding: 48px 22px 24px }
+.proj h1 { font-size: 34px; font-weight: 500; letter-spacing: -.01em }
+.projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
+.proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
+
+.prevnext {
+  display: flex; justify-content: space-between; gap: 16px;
+  max-width: 760px; margin: 0 auto; padding: 24px 22px 8px;
+  font-size: 11px; letter-spacing: .12em; color: var(--dim);
+}
+.prevnext a { color: var(--dim); transition: color .2s }
+.prevnext a:hover { color: var(--ink) }
+
+footer { padding: 40px 22px; font-size: 11px; letter-spacing: .14em; color: var(--dim); text-align: center }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important } }
