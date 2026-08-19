@@ -5,3 +5,7 @@ dist/
 .env.production
 .DS_Store
 Thumbs.db
+
+# реальные кадры/постеры до выбора CDN — только локально, см. public/media-local/README.md
+public/media-local/*
+!public/media-local/README.md
