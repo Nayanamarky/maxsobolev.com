@@ -21,7 +21,7 @@ interface Props {
   id: string;
   title: string;
   client: string;
-  year: number;
+  year?: number;
   categories: string[];
   production?: 'shoot' | 'cg';
   cover: string;
@@ -46,7 +46,8 @@ const [heroVideo, ...restVideos] = videos ?? [];
   <article class="proj">
     <h1>{title}</h1>
     <div class="projmeta mono">
-      {client} · {year} · {categories.join(' · ')}
+      {client}
+      {year && <> · {year}</>} · {categories.join(' · ')}
       {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
     </div>
     <div class="body">

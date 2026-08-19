@@ -6,7 +6,7 @@ interface Props {
   id: string;
   title: string;
   client: string;
-  year: number;
+  year?: number;
   categories: string[];
   production?: 'shoot' | 'cg';
   cover: string;
@@ -28,7 +28,8 @@ const productionLabel = production ? t(`production.${production}` as UIKey) : nu
   <div class="meta">
     <div class="title">{title}</div>
     <div class="sub mono">
-      {client} · {year}
+      {client}
+      {year && <> · {year}</>}
       {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
     </div>
   </div>

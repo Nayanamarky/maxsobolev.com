@@ -15,7 +15,8 @@ const projects = defineCollection({
     title: z.string(),
     /** Клиент / студия */
     client: z.string(),
-    year: z.number().int(),
+    /** Не всегда известен на момент переноса — пишется как узнается */
+    year: z.number().int().optional(),
     /** Категории фильтра: character (персонажка) | vfx | motion2d (2D motion) | neuro (нейронка) */
     categories: z.array(z.enum(['character', 'vfx', 'motion2d', 'neuro'])).min(1),
     /** На чём снято — факт, не фильтр: shoot (съёмка) | cg (full CG). Не всегда известно/применимо. */
