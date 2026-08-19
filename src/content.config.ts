@@ -16,8 +16,10 @@ const projects = defineCollection({
     /** Клиент / студия */
     client: z.string(),
     year: z.number().int(),
-    /** Категории фильтра: cg | vfx | realtime | direction */
-    categories: z.array(z.enum(['cg', 'vfx', 'realtime', 'direction'])).min(1),
+    /** Категории фильтра: character (персонажка) | vfx | motion2d (2D motion) | neuro (нейронка) */
+    categories: z.array(z.enum(['character', 'vfx', 'motion2d', 'neuro'])).min(1),
+    /** На чём снято — факт, не фильтр: shoot (съёмка) | cg (full CG). Не всегда известно/применимо. */
+    production: z.enum(['shoot', 'cg']).optional(),
     /** Кадр-обложка для плитки в сетке */
     cover: z.string(),
     /** Порядок в сетке: меньше — выше */

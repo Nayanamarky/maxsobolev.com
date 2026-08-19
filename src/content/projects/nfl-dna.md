@@ -2,7 +2,8 @@
 title: "NFL — DNA"
 client: "NFL"
 year: 2024
-categories: [cg, vfx]
+production: "shoot"
+categories: [character, vfx]
 cover: "/placeholder/frame-05.jpg"
 order: 5
 ---

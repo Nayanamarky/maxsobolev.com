@@ -98,6 +98,7 @@ header {
 .tile .title { font-size: 19px; font-weight: 500; transform: translateY(6px); opacity: 0; transition: .35s }
 .tile:hover .title { transform: none; opacity: 1 }
 .tile .sub { font-size: 10px; letter-spacing: .16em; color: var(--dim); margin-top: 6px; text-transform: uppercase; opacity: 0; transition: .35s .05s }
+.tile .sub .prod { color: var(--scrub) }
 .tile:hover .sub { opacity: 1 }
 .tile .idx { position: absolute; left: 14px; top: 12px; z-index: 3; font-size: 10px; color: #cfd4da; letter-spacing: .12em; text-shadow: 0 1px 3px rgba(0, 0, 0, .6) }
 .tile .scrubwrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: 0; transition: opacity .3s }
@@ -129,6 +130,7 @@ header {
 .proj { max-width: 760px; margin: 0 auto; padding: 48px 22px 24px }
 .proj h1 { font-size: 34px; font-weight: 500; letter-spacing: -.01em }
 .projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
+.projmeta .prod { color: var(--scrub) }
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 
 .prevnext {

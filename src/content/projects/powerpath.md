@@ -2,7 +2,8 @@
 title: "Powerpath"
 client: "Samsung"
 year: 2023
-categories: [realtime, cg]
+production: "shoot"
+categories: [motion2d, character]
 cover: "/placeholder/frame-01.jpg"
 order: 7
 ---

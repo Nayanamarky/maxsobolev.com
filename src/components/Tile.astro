@@ -1,5 +1,5 @@
 ---
-import { localePath, type Locale } from '../i18n/ui';
+import { useTranslations, localePath, type Locale, type UIKey } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -8,14 +8,17 @@ interface Props {
   client: string;
   year: number;
   categories: string[];
+  production?: 'shoot' | 'cg';
   cover: string;
   index: number;
   total: number;
 }
 
-const { locale, id, title, client, year, categories, cover, index, total } = Astro.props;
+const { locale, id, title, client, year, categories, production, cover, index, total } = Astro.props;
+const t = useTranslations(locale);
 const idx = String(index).padStart(2, '0');
 const totalStr = String(total).padStart(2, '0');
+const productionLabel = production ? t(`production.${production}` as UIKey) : null;
 ---
 
 <a class="tile" href={localePath(locale, `/project/${id}`)} data-cat={categories.join(' ')}>
@@ -24,7 +27,10 @@ const totalStr = String(total).padStart(2, '0');
   <div class="idx mono">{idx} / {totalStr}</div>
   <div class="meta">
     <div class="title">{title}</div>
-    <div class="sub mono">{client} · {year}</div>
+    <div class="sub mono">
+      {client} · {year}
+      {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
+    </div>
   </div>
   <div class="scrubwrap">
     <div class="bar"></div>

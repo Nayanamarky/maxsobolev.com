@@ -2,7 +2,8 @@
 title: "Every Color"
 client: "iPhone 5c"
 year: 2022
-categories: [cg]
+production: "cg"
+categories: [character]
 cover: "/placeholder/frame-03.jpg"
 order: 9
 ---

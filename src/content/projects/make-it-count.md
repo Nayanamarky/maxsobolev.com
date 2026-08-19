@@ -2,7 +2,8 @@
 title: "Make It Count"
 client: "HBO"
 year: 2022
-categories: [direction, vfx]
+production: "shoot"
+categories: [neuro, vfx]
 cover: "/placeholder/frame-04.jpg"
 order: 10
 ---

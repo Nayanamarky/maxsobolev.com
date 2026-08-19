@@ -2,7 +2,8 @@
 title: "Sourced"
 client: "Starbucks"
 year: 2021
-categories: [cg, direction]
+production: "cg"
+categories: [character, neuro]
 cover: "/placeholder/frame-06.jpg"
 order: 12
 ---

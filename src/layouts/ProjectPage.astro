@@ -2,7 +2,7 @@
 import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import ToTop from '../components/ToTop.astro';
-import { useTranslations, localePath, type Locale } from '../i18n/ui';
+import { useTranslations, localePath, type Locale, type UIKey } from '../i18n/ui';
 
 interface Neighbour {
   id: string;
@@ -16,14 +16,16 @@ interface Props {
   client: string;
   year: number;
   categories: string[];
+  production?: 'shoot' | 'cg';
   cover: string;
   prev: Neighbour | null;
   next: Neighbour | null;
 }
 
-const { locale, id, title, client, year, categories, cover, prev, next } = Astro.props;
+const { locale, id, title, client, year, categories, production, cover, prev, next } = Astro.props;
 const t = useTranslations(locale);
 const path = `/project/${id}`;
+const productionLabel = production ? t(`production.${production}` as UIKey) : null;
 
 // Заглушка: страница проекта ещё не спроектирована — см. «Задачи разработки/02_spec.md».
 const stub =
@@ -41,6 +43,7 @@ const stub =
     <h1>{title}</h1>
     <div class="projmeta mono">
       {client} · {year} · {categories.join(' · ')}
+      {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
     </div>
     <p class="stub">{stub}</p>
   </article>

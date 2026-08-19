@@ -2,7 +2,8 @@
 title: "Dad's Rigs"
 client: "Nike"
 year: 2025
-categories: [vfx, cg]
+production: "shoot"
+categories: [character, vfx]
 cover: "/placeholder/frame-01.jpg"
 order: 1
 ---

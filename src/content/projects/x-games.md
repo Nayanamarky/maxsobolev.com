@@ -2,7 +2,8 @@
 title: "X-Games"
 client: "ESPN"
 year: 2024
-categories: [realtime]
+production: "shoot"
+categories: [motion2d]
 cover: "/placeholder/frame-04.jpg"
 order: 4
 ---

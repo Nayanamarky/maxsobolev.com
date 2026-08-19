@@ -2,7 +2,8 @@
 title: "Fold-A-Flame"
 client: "Zippo"
 year: 2025
-categories: [cg]
+production: "cg"
+categories: [character]
 cover: "/placeholder/frame-02.jpg"
 order: 2
 ---
