@@ -2,7 +2,7 @@
 import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import ToTop from '../components/ToTop.astro';
-import ScrubPlayer from '../components/ScrubPlayer.astro';
+import VideoHero from '../components/VideoHero.astro';
 import { useTranslations, localePath, type Locale, type UIKey } from '../i18n/ui';
 
 interface Neighbour {
@@ -34,14 +34,12 @@ const { locale, id, title, client, year, categories, production, cover, videos, 
 const t = useTranslations(locale);
 const path = `/project/${id}`;
 const productionLabel = production ? t(`production.${production}` as UIKey) : null;
-
-const [heroVideo, ...restVideos] = videos ?? [];
 ---
 
 <Base locale={locale} path={path} title={`${title} — ${client}`}>
   <Header locale={locale} path={path} />
 
-  <ScrubPlayer size="hero" poster={heroVideo?.poster ?? cover} embed={heroVideo?.embed} />
+  <VideoHero locale={locale} videos={videos} cover={cover} />
 
   <article class="proj">
     <h1>{title}</h1>
@@ -54,17 +52,6 @@ const [heroVideo, ...restVideos] = videos ?? [];
       <slot />
     </div>
   </article>
-
-  {
-    restVideos.length > 0 && (
-      <div class="videolist">
-        <h2 class="mono">{t('project.moreVideos')}</h2>
-        {restVideos.map((v) => (
-          <ScrubPlayer size="clip" poster={v.poster ?? cover} embed={v.embed} label={v.label?.[locale]} />
-        ))}
-      </div>
-    )
-  }
 
   <nav class="prevnext mono">
     {
