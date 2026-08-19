@@ -27,38 +27,24 @@ const { locale, id, title, client, year, categories, production, cover } = Astro
   </div>
   <div class="scrubwrap">
     <div class="bar"></div>
-    <div class="tc mono">00:00:00</div>
   </div>
 </a>
 
 <script>
-  // Таймкод и полоса — от позиции курсора по горизонтали. Кадр больше не панорамируется:
-  // сдвиг одной статичной фотографии не показывает разные моменты отснятого материала,
-  // это просто «дёрганье картинки». Настоящий скраб (video-seek или спрайт реальных
-  // кадров) — отдельная задача, см. «Задачи разработки/01_concept.md». Условная длина
-  // «клипа» — 60 секунд по 24 fps, просто чтобы было что показывать в формате таймкода.
-  const FPS = 24;
-  const NOMINAL_SECONDS = 60;
-
+  // Полоса — от позиции курсора по горизонтали, чисто декоративный UI-мотив
+  // (не привязана к реальному видео). Таймкода нет — убрали, был фейковым.
   document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
     const bar = tile.querySelector<HTMLElement>('.bar');
-    const tc = tile.querySelector<HTMLElement>('.tc');
-    if (!bar || !tc) return;
+    if (!bar) return;
 
     tile.addEventListener('mouseleave', () => {
       bar.style.width = '0';
-      tc.textContent = '00:00:00';
     });
 
     tile.addEventListener('mousemove', (e) => {
       const r = tile.getBoundingClientRect();
       const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
       bar.style.width = `${x * 100}%`;
-
-      const totalFrames = Math.floor(x * NOMINAL_SECONDS * FPS);
-      const s = Math.floor(totalFrames / FPS) % 60;
-      const f = totalFrames % FPS;
-      tc.textContent = `00:00:${String(s).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
     });
   });
 </script>

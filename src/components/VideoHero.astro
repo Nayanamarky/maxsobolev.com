@@ -1,5 +1,5 @@
 ---
-import { useTranslations, type Locale, type UIKey } from '../i18n/ui';
+import { useTranslations, type Locale } from '../i18n/ui';
 
 interface Video {
   label?: { ru: string; en: string };
@@ -35,7 +35,6 @@ const [first] = videos;
     }
     <div class="scrubplayer-scrubwrap">
       <div class="scrubplayer-bar"></div>
-      <div class="scrubplayer-tc mono">00:00:00</div>
     </div>
   </div>
 </figure>
@@ -58,13 +57,10 @@ const [first] = videos;
   // страница на каждый ролик тут не нужна, все ролики одного проекта смотрятся
   // в одном месте.
   //
-  // Кадр не панорамируется на hover: сдвиг одной статичной фотографии не показывает
-  // разные моменты отснятого материала, это просто «дёрганье картинки». Настоящий
-  // скраб (video-seek или спрайт реальных кадров) — отдельная задача, см.
-  // «Задачи разработки/01_concept.md». Таймкод и полоса остаются — честный UI-мотив,
-  // не привязанный к содержимому кадра.
-  const FPS = 24;
-  const NOMINAL_SECONDS = 60;
+  // Полоса — от позиции курсора, чисто декоративный UI-мотив (не привязана
+  // к реальному видео). Таймкода нет — убрали, был фейковым. Панорамы кадра
+  // тоже нет — вернутся оба, когда появится настоящий скраб через
+  // video.currentTime. См. «Задачи разработки/01_concept.md».
 
   const hero = document.getElementById('videohero');
   const media = hero?.querySelector<HTMLElement>('.scrubplayer-media');
@@ -72,25 +68,18 @@ const [first] = videos;
   if (hero && media) {
     const bindIdle = () => {
       const bar = media.querySelector<HTMLElement>('.scrubplayer-bar');
-      const tc = media.querySelector<HTMLElement>('.scrubplayer-tc');
       const playBtn = media.querySelector<HTMLButtonElement>('.scrubplayer-play');
-      if (!bar || !tc) return;
 
-      media.onmouseleave = () => {
-        bar.style.width = '0';
-        tc.textContent = '00:00:00';
-      };
-
-      media.onmousemove = (e) => {
-        const r = media.getBoundingClientRect();
-        const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-        bar.style.width = `${x * 100}%`;
-
-        const totalFrames = Math.floor(x * NOMINAL_SECONDS * FPS);
-        const s = Math.floor(totalFrames / FPS) % 60;
-        const f = totalFrames % FPS;
-        tc.textContent = `00:00:${String(s).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
-      };
+      if (bar) {
+        media.onmouseleave = () => {
+          bar.style.width = '0';
+        };
+        media.onmousemove = (e) => {
+          const r = media.getBoundingClientRect();
+          const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
+          bar.style.width = `${x * 100}%`;
+        };
+      }
 
       playBtn?.addEventListener('click', () => {
         if (playBtn.dataset.embed) renderPlaying(playBtn.dataset.embed);
