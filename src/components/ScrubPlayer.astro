@@ -35,10 +35,11 @@ const { poster, embed, label, size = 'hero' } = Astro.props;
 </figure>
 
 <script>
-  // Тот же приём, что на плитках главной: скраб по кадру, таймкод 24 fps.
-  // Плюс кнопка плей — по клику кадр меняется на встроенный видеоплеер.
+  // Тот же приём, что на плитках главной: скраб по кадру, полоса и таймкод — оба
+  // от позиции курсора, не от времени наведения. Условная длина «клипа» — 60 секунд
+  // по 24 fps. Плюс кнопка плей — по клику кадр меняется на встроенный видеоплеер.
   const FPS = 24;
-  const FRAME_MS = 1000 / FPS;
+  const NOMINAL_SECONDS = 60;
 
   document.querySelectorAll<HTMLElement>('.scrubplayer').forEach((player) => {
     const media = player.querySelector<HTMLElement>('.scrubplayer-media');
@@ -48,28 +49,10 @@ const { poster, embed, label, size = 'hero' } = Astro.props;
     const playBtn = player.querySelector<HTMLButtonElement>('.scrubplayer-play');
     if (!media || !frame || !bar || !tc) return;
 
-    let raf: number | null = null;
-    let start = 0;
     let playing = false;
 
-    const tick = () => {
-      const ms = performance.now() - start;
-      const f = Math.floor(ms / FRAME_MS) % FPS;
-      const s = Math.floor(ms / 1000) % 60;
-      tc.textContent = `00:00:${String(s).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
-      raf = requestAnimationFrame(tick);
-    };
-
-    media.addEventListener('mouseenter', () => {
-      if (playing) return;
-      start = performance.now();
-      tick();
-    });
-
     media.addEventListener('mouseleave', () => {
-      if (playing || raf === null) return;
-      cancelAnimationFrame(raf);
-      raf = null;
+      if (playing) return;
       bar.style.width = '0';
       tc.textContent = '00:00:00';
       frame.style.backgroundPosition = '20% 30%';
@@ -78,16 +61,20 @@ const { poster, embed, label, size = 'hero' } = Astro.props;
     media.addEventListener('mousemove', (e) => {
       if (playing) return;
       const r = media.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;
+      const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
       frame.style.backgroundPosition = `${20 + x * 60}% ${30 + x * 20}%`;
       bar.style.width = `${x * 100}%`;
+
+      const totalFrames = Math.floor(x * NOMINAL_SECONDS * FPS);
+      const s = Math.floor(totalFrames / FPS) % 60;
+      const f = totalFrames % FPS;
+      tc.textContent = `00:00:${String(s).padStart(2, '0')}:${String(f).padStart(2, '0')}`;
     });
 
     playBtn?.addEventListener('click', () => {
       const embedUrl = playBtn.dataset.embed;
       if (!embedUrl || playing) return;
       playing = true;
-      if (raf !== null) cancelAnimationFrame(raf);
 
       const iframe = document.createElement('iframe');
       iframe.className = 'scrubplayer-iframe';

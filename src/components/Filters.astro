@@ -8,39 +8,75 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const filters = [
+const typeFilters = [
   { key: 'all', label: t('filter.all') },
   { key: 'character', label: t('filter.character') },
   { key: 'vfx', label: t('filter.vfx') },
   { key: 'motion2d', label: t('filter.motion2d') },
   { key: 'neuro', label: t('filter.neuro') },
 ];
+
+// Отдельная ось — на чём снято. Не смешивается с типом работы в одной кнопке:
+// это два разных вопроса о проекте, поэтому и группы фильтров две, хоть и в одной строке.
+const productionFilters = [
+  { key: 'shoot', label: t('production.shoot') },
+  { key: 'cg', label: t('production.cg') },
+];
 ---
 
 <div class="filters" id="filters">
-  {
-    filters.map((f) => (
-      <button class={f.key === 'all' ? 'active' : undefined} data-f={f.key}>
-        {f.label}
-      </button>
-    ))
-  }
+  <div class="filters-group" data-group="type">
+    {
+      typeFilters.map((f) => (
+        <button class={f.key === 'all' ? 'active' : undefined} data-group="type" data-f={f.key}>
+          {f.label}
+        </button>
+      ))
+    }
+  </div>
+  <span class="filters-divider" aria-hidden="true"></span>
+  <div class="filters-group" data-group="prod">
+    {
+      productionFilters.map((f) => (
+        <button data-group="prod" data-f={f.key}>
+          {f.label}
+        </button>
+      ))
+    }
+  </div>
 </div>
 
 <script>
   const filters = document.getElementById('filters');
 
+  function applyFilters() {
+    if (!filters) return;
+    const activeType = filters.querySelector<HTMLElement>('[data-group="type"] button.active')?.dataset.f ?? 'all';
+    const activeProd = filters.querySelector<HTMLElement>('[data-group="prod"] button.active')?.dataset.f;
+
+    document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
+      const cats = (tile.dataset.cat ?? '').split(' ');
+      const prod = tile.dataset.prod ?? '';
+      const typeOk = activeType === 'all' || cats.includes(activeType);
+      const prodOk = !activeProd || prod === activeProd;
+      tile.classList.toggle('hidden', !(typeOk && prodOk));
+    });
+  }
+
   filters?.addEventListener('click', (e) => {
     const b = (e.target as HTMLElement).closest('button');
     if (!b) return;
 
-    filters.querySelectorAll('button').forEach((x) => x.classList.remove('active'));
-    b.classList.add('active');
+    if (b.dataset.group === 'type') {
+      filters.querySelectorAll('[data-group="type"] button').forEach((x) => x.classList.remove('active'));
+      b.classList.add('active');
+    } else {
+      // Вторая ось — переключатель: клик по уже активной кнопке снимает фильтр.
+      const wasActive = b.classList.contains('active');
+      filters.querySelectorAll('[data-group="prod"] button').forEach((x) => x.classList.remove('active'));
+      if (!wasActive) b.classList.add('active');
+    }
 
-    const f = b.dataset.f;
-    document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
-      const cats = (tile.dataset.cat ?? '').split(' ');
-      tile.classList.toggle('hidden', f !== 'all' && !cats.includes(f!));
-    });
+    applyFilters();
   });
 </script>
