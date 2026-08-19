@@ -25,7 +25,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
 
   <main class="grid">
     {
-      projects.map((p, i) => (
+      projects.map((p) => (
         <Tile
           locale={locale}
           id={p.id}
@@ -35,8 +35,6 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
           categories={p.data.categories}
           production={p.data.production}
           cover={p.data.cover}
-          index={i + 1}
-          total={projects.length}
         />
       ))
     }
