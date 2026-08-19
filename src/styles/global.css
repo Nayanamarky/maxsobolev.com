@@ -140,14 +140,11 @@ header {
 .scrubplayer-play svg { margin-left: 2px }
 .scrubplayer-play:hover { border-color: var(--scrub); background: rgba(19, 21, 25, .75); transform: translate(-50%, -50%) scale(1.06) }
 
-.scrubplayer-scrubwrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: 0; transition: opacity .3s }
-.scrubplayer-media:hover .scrubplayer-scrubwrap { opacity: 1 }
-.scrubplayer-bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--scrub) }
 .scrubplayer-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover }
 .scrubplayer-video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; object-fit: cover }
 
 /* ── Миниатюры роликов под героем ─────────────────── */
-.videothumbs { display: flex; gap: 2px; padding: 14px 22px; flex-wrap: wrap; border-bottom: 1px solid var(--line) }
+.videothumbs { display: flex; justify-content: center; gap: 2px; padding: 14px 22px; flex-wrap: wrap; border-bottom: 1px solid var(--line) }
 .videothumbs button {
   font-family: inherit; font-size: 11px; letter-spacing: .1em; color: var(--dim);
   background: var(--panel); border: 1px solid var(--line); padding: 8px 14px; cursor: pointer; transition: .2s;

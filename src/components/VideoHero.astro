@@ -26,16 +26,13 @@ const [first] = videos;
     <div class="scrubplayer-veil"></div>
     {
       first?.embed && (
-        <button class="scrubplayer-play" aria-label="Play">
+        <button class="scrubplayer-play" aria-label="Play" data-embed={first.embed}>
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
             <path d="M8 5v14l11-7z" />
           </svg>
         </button>
       )
     }
-    <div class="scrubplayer-scrubwrap">
-      <div class="scrubplayer-bar"></div>
-    </div>
   </div>
 </figure>
 
@@ -53,42 +50,33 @@ const [first] = videos;
 
 <script>
   // Герой умеет показывать несколько роликов по очереди: клик по миниатюре снизу
-  // подменяет ролик в этом же плеере и сразу запускает воспроизведение — отдельная
-  // страница на каждый ролик тут не нужна, все ролики одного проекта смотрятся
-  // в одном месте.
-  //
-  // Полоса — от позиции курсора, чисто декоративный UI-мотив (не привязана
-  // к реальному видео). Таймкода нет — убрали, был фейковым. Панорамы кадра
-  // тоже нет — вернутся оба, когда появится настоящий скраб через
-  // video.currentTime. См. «Задачи разработки/01_concept.md».
+  // подменяет кадр и кнопку плей на выбранный ролик, но не запускает его сам —
+  // играть начинает только клик по плею. Отдельная страница на каждый ролик
+  // тут не нужна, все ролики одного проекта смотрятся в одном месте.
 
   const hero = document.getElementById('videohero');
   const media = hero?.querySelector<HTMLElement>('.scrubplayer-media');
 
   if (hero && media) {
-    const bindIdle = () => {
-      const bar = media.querySelector<HTMLElement>('.scrubplayer-bar');
+    const bindPlay = () => {
       const playBtn = media.querySelector<HTMLButtonElement>('.scrubplayer-play');
-
-      if (bar) {
-        media.onmouseleave = () => {
-          bar.style.width = '0';
-        };
-        media.onmousemove = (e) => {
-          const r = media.getBoundingClientRect();
-          const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-          bar.style.width = `${x * 100}%`;
-        };
-      }
-
       playBtn?.addEventListener('click', () => {
         if (playBtn.dataset.embed) renderPlaying(playBtn.dataset.embed);
       });
     };
 
+    const renderIdle = (poster: string, embedUrl: string) => {
+      media.innerHTML = `
+        <div class="scrubplayer-frame" style="background-image:url('${poster}')"></div>
+        <div class="scrubplayer-veil"></div>
+        <button class="scrubplayer-play" aria-label="Play" data-embed="${embedUrl}">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      `;
+      bindPlay();
+    };
+
     const renderPlaying = (embedUrl: string) => {
-      media.onmouseleave = null;
-      media.onmousemove = null;
       const isDirectFile = /\.(mp4|webm|mov|m3u8)(\?|$)/i.test(embedUrl);
       if (isDirectFile) {
         media.innerHTML = `<video class="scrubplayer-video" src="${embedUrl}" controls autoplay></video>`;
@@ -97,14 +85,15 @@ const [first] = videos;
       }
     };
 
-    bindIdle();
+    bindPlay();
 
     document.querySelectorAll<HTMLButtonElement>('#videothumbs button').forEach((btn) => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#videothumbs button').forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
         const embedUrl = btn.dataset.embed;
-        if (embedUrl) renderPlaying(embedUrl);
+        const poster = btn.dataset.poster;
+        if (embedUrl && poster) renderIdle(poster, embedUrl);
       });
     });
   }
