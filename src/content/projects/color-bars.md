@@ -5,7 +5,7 @@ year: 2023
 production: "cg"
 categories: [vfx]
 cover: "/placeholder/frame-02.jpg"
-order: 8
+order: 80
 ---
 
 > Заглушка из прототипа. Заменить на реальный проект: клиента, год, роль, кадры.
