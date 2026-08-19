@@ -2,11 +2,18 @@
 import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import ToTop from '../components/ToTop.astro';
+import ScrubPlayer from '../components/ScrubPlayer.astro';
 import { useTranslations, localePath, type Locale, type UIKey } from '../i18n/ui';
 
 interface Neighbour {
   id: string;
   title: string;
+}
+
+interface Video {
+  label?: { ru: string; en: string };
+  embed: string;
+  poster?: string;
 }
 
 interface Props {
@@ -17,27 +24,26 @@ interface Props {
   year: number;
   categories: string[];
   production?: 'shoot' | 'cg';
+  role?: { ru: string; en: string };
   cover: string;
+  videos?: Video[];
   prev: Neighbour | null;
   next: Neighbour | null;
 }
 
-const { locale, id, title, client, year, categories, production, cover, prev, next } = Astro.props;
+const { locale, id, title, client, year, categories, production, role, cover, videos, prev, next } =
+  Astro.props;
 const t = useTranslations(locale);
 const path = `/project/${id}`;
 const productionLabel = production ? t(`production.${production}` as UIKey) : null;
 
-// Заглушка: страница проекта ещё не спроектирована — см. «Задачи разработки/02_spec.md».
-const stub =
-  locale === 'ru'
-    ? 'Страница проекта ещё не спроектирована. Каркас: герой → роль/клиент/год → мой вклад → кадры и breakdown → кредиты → пред/след.'
-    : 'The project page is not designed yet. Skeleton: hero → role/client/year → contribution → frames and breakdowns → credits → prev/next.';
+const [heroVideo, ...restVideos] = videos ?? [];
 ---
 
 <Base locale={locale} path={path} title={`${title} — ${client}`}>
   <Header locale={locale} path={path} />
 
-  <div class="projhero" style={`background-image:url('${cover}')`}></div>
+  <ScrubPlayer size="hero" poster={heroVideo?.poster ?? cover} embed={heroVideo?.embed} />
 
   <article class="proj">
     <h1>{title}</h1>
@@ -45,8 +51,23 @@ const stub =
       {client} · {year} · {categories.join(' · ')}
       {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
     </div>
-    <p class="stub">{stub}</p>
+    {role && <div class="projrole">{role[locale]}</div>}
+
+    <div class="body">
+      <slot />
+    </div>
   </article>
+
+  {
+    restVideos.length > 0 && (
+      <div class="videolist">
+        <h2 class="mono">{t('project.moreVideos')}</h2>
+        {restVideos.map((v) => (
+          <ScrubPlayer size="clip" poster={v.poster ?? cover} embed={v.embed} label={v.label?.[locale]} />
+        ))}
+      </div>
+    )
+  }
 
   <nav class="prevnext mono">
     {

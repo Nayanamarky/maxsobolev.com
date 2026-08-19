@@ -120,18 +120,57 @@ header {
 .totop.show { opacity: 1; transform: none; pointer-events: auto }
 .totop:hover { border-color: var(--dim) }
 
-/* ── Страница проекта (черновая, ждёт спеки) ───────── */
-.projhero {
-  height: 60vh; min-height: 320px;
-  background-size: cover; background-position: center;
-  border-bottom: 1px solid var(--line);
-  filter: saturate(.9) brightness(.85);
+/* ── Скраб-плеер: герой и ролики на странице проекта ── */
+.scrubplayer { position: relative; isolation: isolate }
+.scrubplayer-media { position: relative; overflow: hidden; background: var(--panel) }
+.scrubplayer.hero { border-bottom: 1px solid var(--line) }
+.scrubplayer.hero .scrubplayer-media { height: 60vh; min-height: 320px }
+.scrubplayer.clip .scrubplayer-media { aspect-ratio: 16/9; border: 1px solid var(--line) }
+
+.scrubplayer-frame {
+  position: absolute; inset: 0; background-size: 200% 200%; background-position: 20% 30%;
+  transition: filter .4s, transform .4s; filter: saturate(.9) brightness(.85);
 }
+.scrubplayer-media:hover .scrubplayer-frame { filter: saturate(1.05) brightness(.95); transform: scale(1.02) }
+.scrubplayer-veil { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(6, 7, 9, 0), rgba(6, 7, 9, .5)) }
+
+.scrubplayer-play {
+  position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 56px; height: 56px; border-radius: 50%; cursor: pointer;
+  background: rgba(19, 21, 25, .55); backdrop-filter: blur(6px);
+  border: 1px solid rgba(233, 235, 238, .35); color: var(--ink);
+  display: flex; align-items: center; justify-content: center; transition: .2s;
+}
+.scrubplayer-play svg { margin-left: 2px }
+.scrubplayer-play:hover { border-color: var(--scrub); background: rgba(19, 21, 25, .75); transform: translate(-50%, -50%) scale(1.06) }
+
+.scrubplayer-scrubwrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: 0; transition: opacity .3s }
+.scrubplayer-media:hover .scrubplayer-scrubwrap { opacity: 1 }
+.scrubplayer-tc { position: absolute; right: 12px; bottom: 12px; font-size: 10px; color: var(--scrub); letter-spacing: .08em }
+.scrubplayer-bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--scrub) }
+.scrubplayer-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0 }
+.scrubplayer-label { margin-top: 10px; font-size: 10px; letter-spacing: .14em; color: var(--dim); text-transform: uppercase }
+
+/* ── Страница проекта ─────────────────────────────── */
 .proj { max-width: 760px; margin: 0 auto; padding: 48px 22px 24px }
 .proj h1 { font-size: 34px; font-weight: 500; letter-spacing: -.01em }
 .projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
 .projmeta .prod { color: var(--scrub) }
+.projrole { font-size: 13px; color: var(--ink); margin-top: 14px }
+
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
+
+/* тело проекта — рендер markdown-описания из файла */
+.proj .body { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink) }
+.proj .body > * + * { margin-top: 1em }
+.proj .body h2 { font-size: 18px; font-weight: 500; margin-top: 1.6em }
+.proj .body ul, .proj .body ol { padding-left: 1.2em }
+.proj .body img { max-width: 100%; display: block; border: 1px solid var(--line) }
+.proj .body a { color: var(--scrub); text-decoration: underline; text-underline-offset: 2px }
+
+.videolist { max-width: 760px; margin: 40px auto 0; padding: 0 22px }
+.videolist h2 { font-size: 12px; letter-spacing: .16em; color: var(--dim); text-transform: uppercase; margin-bottom: 16px }
+.videolist .scrubplayer + .scrubplayer { margin-top: 28px }
 
 .prevnext {
   display: flex; justify-content: space-between; gap: 16px;

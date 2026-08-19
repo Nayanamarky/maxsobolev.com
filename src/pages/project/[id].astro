@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import ProjectPage from '../../layouts/ProjectPage.astro';
 import { projectPaths } from '../../lib/projectPaths';
 
@@ -9,6 +9,7 @@ export async function getStaticPaths() {
 }
 
 const { project, prev, next } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <ProjectPage
@@ -19,7 +20,11 @@ const { project, prev, next } = Astro.props;
   year={project.data.year}
   categories={project.data.categories}
   production={project.data.production}
+  role={project.data.role}
   cover={project.data.cover}
+  videos={project.data.videos}
   prev={prev}
   next={next}
-/>
+>
+  <Content />
+</ProjectPage>
