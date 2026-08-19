@@ -36,14 +36,18 @@ const filters = [
   const filters = document.getElementById('filters');
 
   filters?.addEventListener('click', (e) => {
-    const b = (e.target as HTMLElement).closest('button');
-    if (!b) return;
+    const clicked = (e.target as HTMLElement).closest('button');
+    if (!clicked) return;
+
+    // Повторный клик по уже активному тегу снимает фильтр — возвращает «ВСЕ».
+    const wasActive = clicked.classList.contains('active');
+    const target = wasActive && clicked.dataset.f !== 'all' ? filters.querySelector<HTMLElement>('[data-f="all"]')! : clicked;
 
     filters.querySelectorAll('button').forEach((x) => x.classList.remove('active'));
-    b.classList.add('active');
+    target.classList.add('active');
 
-    const axis = b.dataset.axis;
-    const f = b.dataset.f;
+    const axis = target.dataset.axis;
+    const f = target.dataset.f;
 
     document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
       if (f === 'all') {
