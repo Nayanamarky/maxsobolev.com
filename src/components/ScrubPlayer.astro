@@ -76,12 +76,25 @@ const { poster, embed, label, size = 'hero' } = Astro.props;
       if (!embedUrl || playing) return;
       playing = true;
 
-      const iframe = document.createElement('iframe');
-      iframe.className = 'scrubplayer-iframe';
-      iframe.src = embedUrl;
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.allowFullscreen = true;
-      media.replaceChildren(iframe);
+      // Прямая ссылка на файл (.mp4/.webm/.mov, локальный или с CDN) — обычный
+      // <video>. Иначе — это адрес встраиваемого плеера (Vimeo/Bunny) — <iframe>.
+      const isDirectFile = /\.(mp4|webm|mov|m3u8)(\?|$)/i.test(embedUrl);
+
+      if (isDirectFile) {
+        const video = document.createElement('video');
+        video.className = 'scrubplayer-video';
+        video.src = embedUrl;
+        video.controls = true;
+        video.autoplay = true;
+        media.replaceChildren(video);
+      } else {
+        const iframe = document.createElement('iframe');
+        iframe.className = 'scrubplayer-iframe';
+        iframe.src = embedUrl;
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+        media.replaceChildren(iframe);
+      }
     });
   });
 </script>

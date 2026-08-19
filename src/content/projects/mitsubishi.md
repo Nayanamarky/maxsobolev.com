@@ -4,10 +4,11 @@ client: "Mitsubishi"
 year: 2021
 production: "shoot"
 categories: [character]
-cover: "/placeholder/frame-03.jpg"
+cover: "/media-local/Mitsubishi.jpg"
 order: 210
-draft: true
+videos:
+  - embed: "/media-local/Mitsubishi_01.mp4"
+draft: false
 ---
 
-> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.
-
+> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md».

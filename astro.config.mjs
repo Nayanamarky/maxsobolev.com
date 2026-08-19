@@ -3,7 +3,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'https://example.com', // укажем перед деплоем — нужен для sitemap и og-тегов
+  // Канонический адрес сайта. Нужен для sitemap, og-тегов и абсолютных ссылок.
+  site: 'https://maxsobolev.com',
   i18n: {
     defaultLocale: 'ru',
     locales: ['ru', 'en'],

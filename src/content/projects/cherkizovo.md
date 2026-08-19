@@ -4,12 +4,13 @@ client: "Черкизово"
 year: 2025
 production: "shoot"
 categories: [character]
-cover: "/placeholder/frame-03.jpg"
+cover: "/media-local/Cherkizovo.jpg"
 order: 30
-draft: true
+videos:
+  - embed: "/media-local/Cherkizovo_01.mp4"
+  - embed: "/media-local/Cherkizovo_02.mp4"
+  - embed: "/media-local/Cherkizovo_03.mp4"
+draft: false
 ---
 
-<!-- 2 ролика — добавить оба в videos, когда будут ссылки -->
-
-> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.
-
+> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md».
