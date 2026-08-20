@@ -70,8 +70,9 @@ header {
   font-family: inherit; font-size: 11px; letter-spacing: .14em; color: var(--dim);
   background: transparent; border: none; padding: 6px 12px 6px 0; cursor: pointer; transition: color .2s;
 }
-.filters button:hover { color: var(--ink) }
-.filters button.active::after { content: ""; display: block; height: 1px; background: var(--scrub); margin-top: 4px }
+.filters button:hover, .filters button.active { color: var(--ink) }
+.filters button::after { content: ""; display: block; height: 1px; background: transparent; margin-top: 4px }
+.filters button.active::after { background: var(--scrub) }
 
 /* ── Сетка ─────────────────────────────────────────── */
 .grid {
