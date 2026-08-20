@@ -121,7 +121,8 @@ header {
 .scrubplayer { position: relative; isolation: isolate }
 .scrubplayer-media { position: relative; overflow: hidden; background: var(--panel) }
 .scrubplayer.hero { border-bottom: 1px solid var(--line) }
-.scrubplayer.hero .scrubplayer-media { height: 60vh; min-height: 320px }
+/* высота героя — реальные пропорции видео (16:9), без обрезки по бокам/сверху-снизу */
+.scrubplayer.hero .scrubplayer-media { aspect-ratio: 16/9 }
 
 .scrubplayer-frame {
   position: absolute; inset: 0; background-size: cover; background-position: center;
