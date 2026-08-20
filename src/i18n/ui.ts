@@ -20,7 +20,7 @@ export const ui = {
     'filter.all': 'ВСЕ',
     'filter.character': 'ПЕРСОНАЖКА',
     'filter.vfx': 'VFX',
-    'filter.motion2d': 'MOTION',
+    'filter.motion2d': 'МОУШЕН',
     'filter.neuro': 'НЕЙРОНКА',
     'production.shoot': 'СЪЁМКА',
     'production.cg': 'FULL CG',
