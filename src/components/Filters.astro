@@ -35,14 +35,8 @@ const filters = [
 <script>
   const filters = document.getElementById('filters');
 
-  filters?.addEventListener('click', (e) => {
-    const clicked = (e.target as HTMLElement).closest('button');
-    if (!clicked) return;
-
-    // Повторный клик по уже активному тегу снимает фильтр — возвращает «ВСЕ».
-    const wasActive = clicked.classList.contains('active');
-    const target = wasActive && clicked.dataset.f !== 'all' ? filters.querySelector<HTMLElement>('[data-f="all"]')! : clicked;
-
+  function activate(target: HTMLElement) {
+    if (!filters) return;
     filters.querySelectorAll('button').forEach((x) => x.classList.remove('active'));
     target.classList.add('active');
 
@@ -58,5 +52,21 @@ const filters = [
         axis === 'prod' ? (tile.dataset.prod ?? '') === f : (tile.dataset.cat ?? '').split(' ').includes(f!);
       tile.classList.toggle('hidden', !match);
     });
+  }
+
+  filters?.addEventListener('click', (e) => {
+    const clicked = (e.target as HTMLElement).closest('button');
+    if (!clicked) return;
+
+    // Повторный клик по уже активному тегу снимает фильтр — возвращает «ВСЕ».
+    const wasActive = clicked.classList.contains('active');
+    const target = wasActive && clicked.dataset.f !== 'all' ? filters.querySelector<HTMLElement>('[data-f="all"]')! : clicked;
+    activate(target);
   });
+
+  // Подхватить фильтр из ссылки (?f=vfx) — так сюда ведут кликабельные теги
+  // на странице проекта.
+  const urlFilter = new URLSearchParams(location.search).get('f');
+  const urlBtn = urlFilter && filters?.querySelector<HTMLElement>(`[data-f="${urlFilter}"]`);
+  if (urlBtn) activate(urlBtn);
 </script>

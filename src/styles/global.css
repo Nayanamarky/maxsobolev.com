@@ -121,11 +121,10 @@ header {
 .scrubplayer { position: relative; isolation: isolate }
 .scrubplayer-media { position: relative; overflow: hidden; background: var(--panel) }
 .scrubplayer.hero { border-bottom: 1px solid var(--line) }
-/* высота героя — реальные пропорции видео (16:9), без обрезки по бокам/сверху-снизу */
-.scrubplayer.hero .scrubplayer-media { aspect-ratio: 16/9 }
+.scrubplayer.hero .scrubplayer-media { height: 60vh; min-height: 320px }
 
 .scrubplayer-frame {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
+  position: absolute; inset: 0; background-size: contain; background-repeat: no-repeat; background-position: center;
   transition: filter .4s, transform .4s; filter: saturate(.9) brightness(.85);
 }
 .scrubplayer-media:hover .scrubplayer-frame { filter: saturate(1.05) brightness(.95); transform: scale(1.02) }
@@ -141,8 +140,8 @@ header {
 .scrubplayer-play svg { margin-left: 2px }
 .scrubplayer-play:hover { border-color: var(--scrub); background: rgba(19, 21, 25, .75); transform: translate(-50%, -50%) scale(1.06) }
 
-.scrubplayer-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover }
-.scrubplayer-video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; object-fit: cover }
+.scrubplayer-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: contain }
+.scrubplayer-video { position: absolute; inset: 0; width: 100%; height: 100%; background: #000; object-fit: contain }
 
 /* ── Миниатюры роликов под героем ─────────────────── */
 .videothumbs { display: flex; justify-content: center; gap: 2px; padding: 14px 22px; flex-wrap: wrap; border-bottom: 1px solid var(--line) }
@@ -157,7 +156,9 @@ header {
 .proj { max-width: 760px; margin: 0 auto; padding: 48px 22px 24px }
 .proj h1 { font-size: 34px; font-weight: 500; letter-spacing: -.01em }
 .projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
-.projmeta .prod { color: var(--scrub) }
+.projmeta .tag { color: inherit; text-decoration: none; transition: color .15s }
+.projmeta .tag:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px }
+.projmeta .tag.prod { color: var(--scrub) }
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 

@@ -34,6 +34,7 @@ const { locale, id, title, client, year, categories, production, cover, videos, 
 const t = useTranslations(locale);
 const path = `/project/${id}`;
 const productionLabel = production ? t(`production.${production}` as UIKey) : null;
+const home = localePath(locale, '/');
 ---
 
 <Base locale={locale} path={path} title={`${title} — ${client}`}>
@@ -45,8 +46,27 @@ const productionLabel = production ? t(`production.${production}` as UIKey) : nu
     <h1>{title}</h1>
     <div class="projmeta mono">
       {client}
-      {year && <> · {year}</>} · {categories.join(' · ')}
-      {productionLabel && <> · <span class="prod">{productionLabel}</span></>}
+      {year && <> · {year}</>}
+      {
+        categories.map((cat) => (
+          <>
+            {' · '}
+            <a class="tag" href={`${home}?f=${cat}`}>
+              {t(`filter.${cat}` as UIKey)}
+            </a>
+          </>
+        ))
+      }
+      {
+        productionLabel && production && (
+          <>
+            {' · '}
+            <a class="tag prod" href={`${home}?f=${production}`}>
+              {productionLabel}
+            </a>
+          </>
+        )
+      }
     </div>
     <div class="body">
       <slot />
