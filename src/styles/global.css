@@ -126,9 +126,8 @@ header {
 
 .scrubplayer-frame {
   position: absolute; inset: 0; background-size: contain; background-repeat: no-repeat; background-position: center;
-  transition: filter .4s, transform .4s; filter: saturate(.9) brightness(.85);
+  filter: saturate(.9) brightness(.85);
 }
-.scrubplayer-media:hover .scrubplayer-frame { filter: saturate(1.05) brightness(.95) }
 .scrubplayer-veil { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(6, 7, 9, 0), rgba(6, 7, 9, .5)) }
 
 .scrubplayer-play {
