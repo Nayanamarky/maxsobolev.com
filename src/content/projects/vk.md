@@ -5,7 +5,7 @@ year: 2024
 production: "shoot"
 categories: [motion2d, vfx]
 cover: "/placeholder/frame-03.jpg"
-order: 1500
+order: 20240101
 draft: true
 ---
 

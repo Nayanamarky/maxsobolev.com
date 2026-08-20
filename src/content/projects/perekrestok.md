@@ -5,7 +5,7 @@ year: 2025
 production: "shoot"
 categories: [character]
 cover: "/media-local/X5.jpg"
-order: 800
+order: 20250101
 videos:
   - embed: "/media-local/X5_01.mp4"
 draft: false

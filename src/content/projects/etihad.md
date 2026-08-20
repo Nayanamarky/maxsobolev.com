@@ -4,7 +4,7 @@ client: "Etihad"
 year: 2024
 categories: [motion2d]
 cover: "/placeholder/frame-02.jpg"
-order: 1400
+order: 20240101
 draft: true
 ---
 

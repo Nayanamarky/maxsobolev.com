@@ -5,7 +5,7 @@ year: 2025
 production: "shoot"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/YaSplit_Jaba_01.jpg"
-order: 400
+order: 20250101
 draft: false
 ---
 

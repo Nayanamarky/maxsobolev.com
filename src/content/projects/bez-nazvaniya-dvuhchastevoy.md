@@ -5,7 +5,7 @@ year: 2024
 production: "cg"
 categories: [neuro]
 cover: "/placeholder/frame-04.jpg"
-order: 1600
+order: 20240101
 draft: true
 ---
 

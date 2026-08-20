@@ -5,7 +5,7 @@ year: 2025
 production: "shoot"
 categories: [motion2d]
 cover: "/placeholder/frame-05.jpg"
-order: 500
+order: 20250101
 draft: true
 ---
 
