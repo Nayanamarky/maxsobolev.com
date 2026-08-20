@@ -4,7 +4,7 @@ client: "Сбер"
 year: 2024
 categories: [neuro]
 cover: "/placeholder/frame-01.jpg"
-order: 130
+order: 1300
 draft: true
 ---
 

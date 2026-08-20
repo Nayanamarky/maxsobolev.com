@@ -5,7 +5,7 @@ year: 2022
 production: "cg"
 categories: [character]
 cover: "/placeholder/frame-02.jpg"
-order: 200
+order: 2000
 draft: true
 ---
 

@@ -5,7 +5,7 @@ year: 2025
 production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/Dobriy_los_01.jpg"
-order: 20
+order: 200
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/020cfa17-8fea-404c-b63b-80d16f734451"
 draft: false

@@ -5,7 +5,7 @@ year: 2024
 production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/Chistaya_Liniya_01.jpg"
-order: 175
+order: 1750
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/2332e265-82c3-4aa8-a5e9-60e8153fc323"
 draft: false

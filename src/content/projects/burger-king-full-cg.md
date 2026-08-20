@@ -5,7 +5,7 @@ year: 2024
 production: "cg"
 categories: [character]
 cover: "/placeholder/frame-06.jpg"
-order: 145
+order: 1450
 draft: true
 ---
 
