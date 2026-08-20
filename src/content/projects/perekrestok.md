@@ -8,7 +8,7 @@ cover: "/media-local/X5.jpg"
 order: 20250101
 videos:
   - embed: "/media-local/X5_01.mp4"
-draft: false
+draft: true
 ---
 
 <!-- в таблице было 3 ролика, пока есть файл только на один — остальные добавить в videos, когда появятся -->
