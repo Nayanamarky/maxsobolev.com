@@ -1,12 +1,12 @@
 ---
-title: "Яндекс (Жаба)"
-client: "Яндекс (Жаба)"
+title: "Яндекс Сплит"
+client: "Яндекс Сплит"
 year: 2025
 production: "shoot"
 categories: [character]
-cover: "/placeholder/frame-04.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/YaSplit_Jaba_01.jpg"
 order: 40
-draft: true
+draft: false
 ---
 
 > Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.

@@ -1,13 +1,13 @@
 ---
 title: "Добрый лось"
-client: "Добрый лось"
+client: "Добрый"
 year: 2025
 production: "cg"
 categories: [character]
-cover: "/media-local/Dobriy.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Dobriy_los_01.jpg"
 order: 20
 videos:
-  - embed: "/media-local/Dobriy_01.mp4"
+  - embed: "https://iframe.mediadelivery.net/embed/732977/020cfa17-8fea-404c-b63b-80d16f734451"
 draft: false
 ---
 

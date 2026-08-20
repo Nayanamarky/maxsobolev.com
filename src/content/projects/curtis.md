@@ -1,13 +1,15 @@
 ---
 title: "Curtis"
 client: "Curtis"
+year: 2019
 production: "shoot"
 categories: [motion2d]
-cover: "/media-local/Curtis.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Curtis_01.jpg"
 order: 5
 videos:
-  - embed: "/media-local/Curtis_01.mp4"
-  - embed: "/media-local/Curtis_02.mp4"
+  - embed: "https://iframe.mediadelivery.net/embed/732977/401be32c-76fa-4d3d-b282-02f32e63d621"
+  - embed: "https://iframe.mediadelivery.net/embed/732977/4db173ec-9b4e-4c77-b964-3748b2793c60"
+    poster: "https://maxsobolev-media.b-cdn.net/Curtis_02.jpg"
 draft: false
 ---
 
