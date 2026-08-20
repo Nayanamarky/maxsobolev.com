@@ -96,10 +96,6 @@ header {
 .tile:hover .title { transform: none; opacity: 1 }
 .tile .sub { font-size: 10px; letter-spacing: .16em; color: var(--dim); margin-top: 6px; text-transform: uppercase; opacity: 0; transition: .35s .05s }
 .tile:hover .sub { opacity: 1 }
-.tile .scrubwrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; opacity: 0; transition: opacity .3s }
-.tile:hover .scrubwrap { opacity: 1 }
-.tile .bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--scrub) }
-
 /* фокус с клавиатуры — плитка это ссылка */
 .tile:focus-visible { outline: 1px solid var(--scrub); outline-offset: -2px }
 .tile:focus-visible .title, .tile:focus-visible .sub { transform: none; opacity: 1 }

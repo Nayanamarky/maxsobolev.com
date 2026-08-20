@@ -25,26 +25,4 @@ const { locale, id, title, client, year, categories, production, cover } = Astro
       {year && <> · {year}</>}
     </div>
   </div>
-  <div class="scrubwrap">
-    <div class="bar"></div>
-  </div>
 </a>
-
-<script>
-  // Полоса — от позиции курсора по горизонтали, чисто декоративный UI-мотив
-  // (не привязана к реальному видео). Таймкода нет — убрали, был фейковым.
-  document.querySelectorAll<HTMLElement>('.tile').forEach((tile) => {
-    const bar = tile.querySelector<HTMLElement>('.bar');
-    if (!bar) return;
-
-    tile.addEventListener('mouseleave', () => {
-      bar.style.width = '0';
-    });
-
-    tile.addEventListener('mousemove', (e) => {
-      const r = tile.getBoundingClientRect();
-      const x = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-      bar.style.width = `${x * 100}%`;
-    });
-  });
-</script>
