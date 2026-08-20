@@ -70,7 +70,7 @@ header {
   font-family: inherit; font-size: 11px; letter-spacing: .14em; color: var(--dim);
   background: transparent; border: none; padding: 6px 12px 6px 0; cursor: pointer; transition: color .2s;
 }
-.filters button:hover, .filters button.active { color: var(--ink) }
+.filters button:hover { color: var(--ink) }
 .filters button.active::after { content: ""; display: block; height: 1px; background: var(--scrub); margin-top: 4px }
 
 /* ── Сетка ─────────────────────────────────────────── */
@@ -127,7 +127,7 @@ header {
   position: absolute; inset: 0; background-size: contain; background-repeat: no-repeat; background-position: center;
   transition: filter .4s, transform .4s; filter: saturate(.9) brightness(.85);
 }
-.scrubplayer-media:hover .scrubplayer-frame { filter: saturate(1.05) brightness(.95); transform: scale(1.02) }
+.scrubplayer-media:hover .scrubplayer-frame { filter: saturate(1.05) brightness(.95) }
 .scrubplayer-veil { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(6, 7, 9, 0), rgba(6, 7, 9, .5)) }
 
 .scrubplayer-play {
@@ -158,7 +158,6 @@ header {
 .projmeta { font-size: 11px; letter-spacing: .16em; color: var(--dim); margin-top: 10px; text-transform: uppercase }
 .projmeta .tag { color: inherit; text-decoration: none; transition: color .15s }
 .projmeta .tag:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px }
-.projmeta .tag.prod { color: var(--scrub) }
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 
