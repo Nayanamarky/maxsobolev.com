@@ -6,6 +6,8 @@ production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/Delivery_01.jpg"
 order: 20240101
+videos:
+  - embed: "https://iframe.mediadelivery.net/embed/732977/22934e11-cdba-467d-a9d6-be86fe2b7b5b"
 draft: false
 ---
 

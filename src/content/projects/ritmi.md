@@ -6,6 +6,8 @@ production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/Ritmi_01.jpg"
 order: 20240101
+videos:
+  - embed: "https://iframe.mediadelivery.net/embed/732977/05b4a6ae-d11d-41a1-8617-c27a96e1a48d"
 draft: false
 ---
 

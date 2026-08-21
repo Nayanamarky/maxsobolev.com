@@ -6,6 +6,8 @@ production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/OTP_01.jpg"
 order: 20240101
+videos:
+  - embed: "https://iframe.mediadelivery.net/embed/732977/821674b4-6198-4cee-b442-bd9af1869a82"
 draft: false
 ---
 
