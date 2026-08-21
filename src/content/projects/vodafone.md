@@ -4,9 +4,9 @@ client: "Vodafone"
 year: 2022
 production: "cg"
 categories: [character]
-cover: "/placeholder/frame-02.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Vodafone_01.jpg"
 order: 20220101
-draft: true
+draft: false
 ---
 
 <!-- год — диапазон 2021–22, взят более поздний -->

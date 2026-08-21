@@ -4,13 +4,11 @@ client: "Перекрёсток"
 year: 2025
 production: "shoot"
 categories: [character]
-cover: "/media-local/X5.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/X5_01.jpg"
 order: 20250101
-videos:
-  - embed: "/media-local/X5_01.mp4"
-draft: true
+draft: false
 ---
 
-<!-- в таблице было 3 ролика, пока есть файл только на один — остальные добавить в videos, когда появятся -->
+<!-- 3 ролика, кадры залиты (X5_01/02/03.jpg) — добавить videos, когда придут ссылки с Bunny Stream -->
 
 > Реальная работа, перенесена из «Задачи разработки/03_список_работ.md».
