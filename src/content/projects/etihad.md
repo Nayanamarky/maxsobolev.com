@@ -1,12 +1,14 @@
 ---
-title: "Etihad"
-client: "Etihad"
+title: "Etisalat"
+client: "Etisalat"
 year: 2024
 categories: [motion2d]
-cover: "/placeholder/frame-02.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Etisalat_01.jpg"
 order: 20240101
-draft: true
+draft: false
 ---
 
-> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.
+<!-- было "Etihad" (авиакомпания) в исходном списке — похоже на ошибку памяти, реальный клиент, скорее всего, Etisalat (телеком); поправить, если неверно -->
+
+> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md».
 

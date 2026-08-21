@@ -4,9 +4,9 @@ client: "Burger King"
 year: 2025
 production: "shoot"
 categories: [motion2d]
-cover: "/placeholder/frame-05.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Burger_King_01.jpg"
 order: 20250101
-draft: true
+draft: false
 ---
 
 <!-- не путать с burger-king-2023 (другой проект, 2023–24) -->
