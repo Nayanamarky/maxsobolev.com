@@ -152,6 +152,8 @@ header {
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 
+.proj .portrait { width: 220px; max-width: 100%; display: block; margin-top: 24px; border: 1px solid var(--line) }
+
 /* тело проекта — рендер markdown-описания из файла */
 .proj .body { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink) }
 .proj .body > * + * { margin-top: 1em }
