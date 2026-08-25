@@ -1,5 +1,5 @@
 ---
-title: "Mitsubishi"
+title: "Ladybug"
 client: "Mitsubishi"
 year: 2021
 categories: [character, vfx]

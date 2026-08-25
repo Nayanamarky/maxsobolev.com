@@ -1,10 +1,10 @@
 ---
-title: "Перекрёсток"
-client: "Перекрёсток"
-year: 2025
+title: "Бонусята"
+client: "X5"
+year: 2022
 categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/X5_01.jpg"
-order: 20250101
+order: 20220101
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/67d7f4fd-a05b-46f5-8101-df73df47f78e"
   - embed: "https://iframe.mediadelivery.net/embed/732977/918689b8-960b-42a0-af30-e6226a221cd8"

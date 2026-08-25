@@ -1,14 +1,13 @@
 ---
 title: "Покупальцы"
-client: "Покупальцы"
-year: 2024
+client: "Delivery"
+year: 2022
 categories: [character, cg]
-cover: "/placeholder/frame-04.jpg"
-order: 20240101
-draft: true
+cover: "https://maxsobolev-media.b-cdn.net/Delivery_01.jpg"
+order: 20220101
+videos:
+  - embed: "https://iframe.mediadelivery.net/embed/732977/22934e11-cdba-467d-a9d6-be86fe2b7b5b"
+draft: false
 ---
 
-<!-- проверить написание названия -->
-
-> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.
-
+> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Клиент — Delivery, «Покупальцы» — внутреннее название проекта (кадр/видео были залиты под именем клиента, отсюда путаница — раньше был отдельный файл `delivery.md`, слит сюда).

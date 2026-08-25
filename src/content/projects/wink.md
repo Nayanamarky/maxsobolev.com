@@ -1,10 +1,10 @@
 ---
-title: "Wink"
+title: "На Wink'e"
 client: "Wink"
-year: 2023
+year: 2021
 categories: [cg, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/WINK_01.jpg"
-order: 20230101
+order: 20210101
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/a75b9e50-a726-40a3-941e-7b071e046bb9"
   - embed: "https://iframe.mediadelivery.net/embed/732977/3de4bd84-7dcb-40a9-8208-e8375b1e0213"
