@@ -18,9 +18,9 @@ const { locale, id, title, client, year, categories, cover } = Astro.props;
   <div class="frame" style={`background-image:url('${cover}')`}></div>
   <div class="veil"></div>
   <div class="meta">
-    <div class="title">{title}</div>
+    <div class="title">{client}</div>
     <div class="sub mono">
-      {client}
+      {title}
       {year && <> · {year}</>}
     </div>
   </div>

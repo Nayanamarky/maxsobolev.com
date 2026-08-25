@@ -18,8 +18,8 @@ export function projectPaths(projects: Project[]) {
       params: { id: project.id },
       props: {
         project,
-        prev: prevEntry ? { id: prevEntry.id, title: prevEntry.data.title } : null,
-        next: nextEntry ? { id: nextEntry.id, title: nextEntry.data.title } : null,
+        prev: prevEntry ? { id: prevEntry.id, client: prevEntry.data.client } : null,
+        next: nextEntry ? { id: nextEntry.id, client: nextEntry.data.client } : null,
       },
     };
   });
