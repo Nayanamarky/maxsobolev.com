@@ -9,6 +9,8 @@ interface Props {
 
 const { locale, path = '/' } = Astro.props;
 const t = useTranslations(locale);
+const other: Locale = locale === 'ru' ? 'en' : 'ru';
+const tOther = useTranslations(other);
 const name = locale === 'ru' ? 'МАКСИМ СОБОЛЕВ' : 'MAX SOBOLEV';
 ---
 
@@ -24,12 +26,12 @@ const name = locale === 'ru' ? 'МАКСИМ СОБОЛЕВ' : 'MAX SOBOLEV';
     </button>
 
     <div class="dropdown" id="dropdown">
-      {/* латинская подпись — приём из прототипа; на английской версии она дублировала бы пункт */}
+      {/* вторая, латинская/русская подпись — приём из прототипа; всегда язык, обратный текущему */}
       <a href={localePath(locale, '/about')}>
-        {t('menu.about')}{locale === 'ru' && <span class="en mono">ABOUT</span>}
+        {t('menu.about')}<span class="en mono">{tOther('menu.about').toUpperCase()}</span>
       </a>
       <a href={localePath(locale, '/contact')}>
-        {t('menu.contact')}{locale === 'ru' && <span class="en mono">CONTACT</span>}
+        {t('menu.contact')}<span class="en mono">{tOther('menu.contact').toUpperCase()}</span>
       </a>
       <a href={localePath(locale, '/posts')}>
         {t('menu.posts')}<span class="en mono">TELEGRAM</span>
@@ -39,7 +41,7 @@ const name = locale === 'ru' ? 'МАКСИМ СОБОЛЕВ' : 'MAX SOBOLEV';
         <a href={localePath('ru', path)} aria-current={locale === 'ru' ? 'true' : undefined}>RU</a>
         <a href={localePath('en', path)} aria-current={locale === 'en' ? 'true' : undefined}>EN</a>
       </div>
-      <div class="foot mono">TELEGRAM · BEHANCE · IMDB</div>
+      <a class="foot mono" href="https://t.me/nayanamarky" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
     </div>
   </div>
 </header>

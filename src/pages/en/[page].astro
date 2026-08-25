@@ -2,7 +2,7 @@
 import StubPage from '../../layouts/StubPage.astro';
 
 export function getStaticPaths() {
-  return [{ params: { page: 'about' } }, { params: { page: 'contact' } }, { params: { page: 'posts' } }];
+  return [{ params: { page: 'contact' } }, { params: { page: 'posts' } }];
 }
 
 const { page } = Astro.params;

@@ -1,0 +1,85 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import ToTop from '../components/ToTop.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const path = '/about';
+const isRu = locale === 'ru';
+---
+
+<Base locale={locale} path={path} title={t('menu.about')}>
+  <Header locale={locale} path={path} />
+
+  <article class="proj">
+    <h1>{t('menu.about')}</h1>
+    <div class="projmeta mono">{isRu ? 'CG / VFX PRODUCTION SUPERVISOR · МОСКВА' : 'CG / VFX PRODUCTION SUPERVISOR · MOSCOW'}</div>
+
+    <div class="body">
+      {isRu ? (
+        <>
+          <p>
+            Веду проект от брифа до финальной сдачи — вместе с продюсером и арт-директором, но отвечаю
+            именно за то, чтобы всё это состыковалось: план работ и пайплайн под тритмент, подбор команды
+            и таймингов, разбор задач с исполнителями, контроль качества и сроков. Больше 13 лет в
+            CG/VFX-продакшене; из них четыре с половиной года — production supervisor в Synticate,
+            больше 40 рекламных проектов от брифа до эфира.
+          </p>
+          <p>
+            К любой сложности стараюсь иметь минимум два варианта решения — и объясняю их понятно и
+            исполнителям, и заказчику, потому что чаще всего я и есть звено между ними. Пайплайн строю с
+            запасом на то, что понадобится позже, а не под текущий объём задач — так производство потом
+            расширяется без перестройки с нуля.
+          </p>
+
+          <h2>Опыт</h2>
+          <ul>
+            <li><strong>Synticate</strong> — production supervisor — 2021–2025</li>
+            <li><strong>Союзмультфильм</strong> — технический директор / супервайзер проекта — 2020–2021</li>
+            <li><strong>Argunov Studio</strong> — modeling supervisor, CG generalist — «Кома», «Аванпост», Saaho — 2019</li>
+            <li><strong>NAOS</strong> — CG generalist, technical / art director — 2017–2019</li>
+          </ul>
+
+          <h2>Инструменты</h2>
+          <p>Maya, Houdini, Substance Painter, Arnold, Redshift, Nuke — супервайзинг в Cerebro, Telegram, Google Sheets, Gantt.</p>
+        </>
+      ) : (
+        <>
+          <p>
+            I run the project from brief to final delivery — together with a producer and art director,
+            but my job is making it all click: a plan and pipeline built around the treatment, team and
+            timing, breaking down tasks with the crew, keeping quality and deadlines on track. 13+ years
+            in CG/VFX production; the last four and a half as production supervisor at Synticate, on 40+
+            ad campaigns from brief to air.
+          </p>
+          <p>
+            For any problem I try to have at least two ways to solve it — and explain them clearly to
+            both the crew and the client, since I'm usually the link between them. I build pipelines with
+            room for what's needed later, not just the current workload, so production can scale up in
+            volume or quality without rebuilding from scratch.
+          </p>
+
+          <h2>Experience</h2>
+          <ul>
+            <li><strong>Synticate</strong> — production supervisor — 2021–2025</li>
+            <li><strong>Soyuzmultfilm</strong> — technical director / project supervisor — 2020–2021</li>
+            <li><strong>Argunov Studio</strong> — modeling supervisor, CG generalist — "Koma", "Outpost", Saaho — 2019</li>
+            <li><strong>NAOS</strong> — CG generalist, technical / art director — 2017–2019</li>
+          </ul>
+
+          <h2>Tools</h2>
+          <p>Maya, Houdini, Substance Painter, Arnold, Redshift, Nuke — supervising via Cerebro, Telegram, Google Sheets, Gantt.</p>
+        </>
+      )}
+    </div>
+  </article>
+
+  <footer class="mono">{t('footer')}</footer>
+  <ToTop locale={locale} />
+</Base>
