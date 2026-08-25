@@ -152,7 +152,13 @@ header {
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 
-.proj .portrait { width: 220px; max-width: 100%; display: block; margin-top: 24px; border: 1px solid var(--line) }
+.proj .body .portrait {
+  width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: none;
+  float: left; shape-outside: circle(50%); margin: 4px 22px 12px 0;
+}
+@media (max-width: 560px) {
+  .proj .body .portrait { float: none; display: block; margin: 0 auto 20px }
+}
 
 /* тело проекта — рендер markdown-описания из файла */
 .proj .body { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink) }
