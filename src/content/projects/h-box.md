@@ -3,11 +3,26 @@ title: "H-box"
 client: "H-box"
 year: 2026
 categories: [character]
-cover: "/placeholder/frame-01.jpg"
+cover: "https://maxsobolev-media.b-cdn.net/Hbox_01.jpg"
 order: 20260101
-draft: true
+videos:
+  - embed: "https://iframe.mediadelivery.net/embed/732977/6f3bbb5d-035b-4de2-9dda-36b0f1dc1761"
+    label: { ru: "Главный ролик", en: "Main video" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/91aa71c6-1891-4cac-a819-8480974cc0b1"
+    label: { ru: "Кат 1", en: "Cut 1" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/cb40fbb9-0628-482b-a9a1-8d69c271e904"
+    label: { ru: "Кат 2", en: "Cut 2" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/44668207-d14c-4312-9599-0b3a1bb29d9e"
+    label: { ru: "Кат 3", en: "Cut 3" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/2bbbad61-cbd7-4750-b793-8a1668b8565f"
+    label: { ru: "Кат 4", en: "Cut 4" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/177a3d35-c029-4b64-9708-13b1b7421e26"
+    label: { ru: "Кат 5", en: "Cut 5" }
+  - embed: "https://iframe.mediadelivery.net/embed/732977/d880d11a-1fd6-46d3-b679-77332e15fec7"
+    label: { ru: "Кат 6", en: "Cut 6" }
+draft: false
 ---
 
-<!-- уточнить написание бренда; 1 главный ролик + 6 катов — добавить в videos, когда будут ссылки -->
+<!-- уточнить написание бренда -->
 
 
