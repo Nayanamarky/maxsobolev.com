@@ -160,6 +160,13 @@ header {
   .proj .portrait { float: none; display: block; margin: 0 auto 20px }
 }
 
+.proj .body .clients { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 28px; margin-top: 1.6em }
+.proj .body .clients img {
+  height: 22px; width: auto; max-width: 84px; object-fit: contain;
+  opacity: .8; filter: grayscale(1); transition: opacity .2s, filter .2s;
+}
+.proj .body .clients img:hover { opacity: 1; filter: grayscale(0) }
+
 /* тело проекта — рендер markdown-описания из файла */
 .proj .body { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink) }
 .proj .body > * + * { margin-top: 1em }
