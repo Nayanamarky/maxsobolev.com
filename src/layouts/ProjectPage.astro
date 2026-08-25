@@ -23,17 +23,15 @@ interface Props {
   client: string;
   year?: number;
   categories: string[];
-  production?: 'shoot' | 'cg';
   cover: string;
   videos?: Video[];
   prev: Neighbour | null;
   next: Neighbour | null;
 }
 
-const { locale, id, title, client, year, categories, production, cover, videos, prev, next } = Astro.props;
+const { locale, id, title, client, year, categories, cover, videos, prev, next } = Astro.props;
 const t = useTranslations(locale);
 const path = `/project/${id}`;
-const productionLabel = production ? t(`production.${production}` as UIKey) : null;
 const home = localePath(locale, '/');
 ---
 
@@ -56,16 +54,6 @@ const home = localePath(locale, '/');
             </a>
           </>
         ))
-      }
-      {
-        productionLabel && production && (
-          <>
-            {' · '}
-            <a class="tag" href={`${home}?f=${production}`}>
-              {productionLabel}
-            </a>
-          </>
-        )
       }
     </div>
     <div class="body">

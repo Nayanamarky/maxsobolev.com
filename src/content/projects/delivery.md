@@ -2,7 +2,6 @@
 title: "Delivery"
 client: "Delivery"
 year: 2024
-production: "cg"
 categories: [character]
 cover: "https://maxsobolev-media.b-cdn.net/Delivery_01.jpg"
 order: 20240101

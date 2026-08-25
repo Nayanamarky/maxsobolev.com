@@ -2,8 +2,7 @@
 title: "Лига Ставок"
 client: "Лига Ставок"
 year: 2025
-production: "cg"
-categories: [character]
+categories: [cg, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Liga_stavok_01.jpg"
 order: 20250101
 videos:

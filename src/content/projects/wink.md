@@ -2,7 +2,7 @@
 title: "Wink"
 client: "Wink"
 year: 2023
-categories: [vfx]
+categories: [cg, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/WINK_01.jpg"
 order: 20230101
 videos:

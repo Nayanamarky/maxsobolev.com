@@ -2,7 +2,6 @@
 title: "H-box"
 client: "H-box"
 year: 2026
-production: "shoot"
 categories: [character]
 cover: "/placeholder/frame-01.jpg"
 order: 20260101

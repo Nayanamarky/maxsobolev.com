@@ -2,8 +2,7 @@
 title: "Vodafone"
 client: "Vodafone"
 year: 2022
-production: "cg"
-categories: [character]
+categories: [character, cg, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Vodafone_01.jpg"
 order: 20220101
 videos:

@@ -2,8 +2,7 @@
 title: "Х-Холдинг"
 client: "Х-Холдинг"
 year: 2024
-production: "cg"
-categories: [character]
+categories: [character, cg, motion2d, neuro]
 cover: "https://maxsobolev-media.b-cdn.net/Xholding_01.jpg"
 order: 20240101
 videos:

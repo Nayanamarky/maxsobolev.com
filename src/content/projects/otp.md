@@ -2,8 +2,7 @@
 title: "ОТП Банк"
 client: "ОТП Банк"
 year: 2024
-production: "cg"
-categories: [character]
+categories: [vfx, neuro]
 cover: "https://maxsobolev-media.b-cdn.net/OTP_01.jpg"
 order: 20240101
 videos:

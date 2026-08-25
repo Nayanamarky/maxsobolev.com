@@ -2,7 +2,6 @@
 title: "Без названия — «девочка прыгает»"
 client: "Без названия — «девочка прыгает»"
 year: 2024
-production: "cg"
 categories: [character]
 cover: "/placeholder/frame-03.jpg"
 order: 20240101

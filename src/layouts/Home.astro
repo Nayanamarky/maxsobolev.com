@@ -33,7 +33,6 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
           client={p.data.client}
           year={p.data.year}
           categories={p.data.categories}
-          production={p.data.production}
           cover={p.data.cover}
         />
       ))

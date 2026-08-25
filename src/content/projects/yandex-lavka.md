@@ -2,8 +2,7 @@
 title: "Яндекс Лавка"
 client: "Яндекс Лавка"
 year: 2025
-production: "shoot"
-categories: [character]
+categories: [vfx, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Yandex_Lavka_01.jpg"
 order: 20250101
 videos:

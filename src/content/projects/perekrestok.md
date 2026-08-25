@@ -2,8 +2,7 @@
 title: "Перекрёсток"
 client: "Перекрёсток"
 year: 2025
-production: "shoot"
-categories: [character]
+categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/X5_01.jpg"
 order: 20250101
 videos:

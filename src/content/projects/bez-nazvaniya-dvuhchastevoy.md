@@ -2,7 +2,6 @@
 title: "Без названия — из двух частей"
 client: "Без названия — из двух частей"
 year: 2024
-production: "cg"
 categories: [neuro]
 cover: "/placeholder/frame-04.jpg"
 order: 20240101

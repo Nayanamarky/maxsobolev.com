@@ -2,8 +2,7 @@
 title: "Яндекс Сплит"
 client: "Яндекс Сплит"
 year: 2025
-production: "shoot"
-categories: [character]
+categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/YaSplit_Jaba_01.jpg"
 order: 20250101
 videos:

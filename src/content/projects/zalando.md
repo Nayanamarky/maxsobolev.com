@@ -2,8 +2,7 @@
 title: "Zalando"
 client: "Zalando"
 year: 2022
-production: "shoot"
-categories: [character, vfx]
+categories: [vfx, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Zalando_01.jpg"
 order: 20220101
 videos:

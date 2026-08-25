@@ -2,8 +2,7 @@
 title: "Jaguar"
 client: "Jaguar"
 year: 2025
-production: "shoot"
-categories: [vfx]
+categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Jaguar_01.jpg"
 order: 20250101
 videos:

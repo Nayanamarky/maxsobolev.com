@@ -2,7 +2,7 @@
 title: "Сбер"
 client: "Сбер"
 year: 2024
-categories: [neuro]
+categories: [vfx, motion2d, neuro]
 cover: "https://maxsobolev-media.b-cdn.net/SberImage_01.jpg"
 order: 20240101
 videos:

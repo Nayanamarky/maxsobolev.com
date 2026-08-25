@@ -2,7 +2,6 @@
 title: "Авито"
 client: "Авито"
 year: 2024
-production: "cg"
 categories: [character]
 cover: "/placeholder/frame-03.jpg"
 order: 20240101

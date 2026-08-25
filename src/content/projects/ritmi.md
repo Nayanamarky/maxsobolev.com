@@ -2,8 +2,7 @@
 title: "Ритми"
 client: "Ритми"
 year: 2024
-production: "cg"
-categories: [character]
+categories: [character, cg, vfx, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Ritmi_01.jpg"
 order: 20240101
 videos:

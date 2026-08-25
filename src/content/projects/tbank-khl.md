@@ -2,8 +2,7 @@
 title: "Т-Банк КХЛ"
 client: "Т-Банк КХЛ"
 year: 2024
-production: "cg"
-categories: [character]
+categories: [character, cg, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/TBank_KHL_01.jpg"
 order: 20240101
 videos:

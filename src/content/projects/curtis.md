@@ -2,8 +2,7 @@
 title: "Curtis"
 client: "Curtis"
 year: 2019
-production: "shoot"
-categories: [motion2d]
+categories: [vfx, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Curtis_01.jpg"
 order: 20190101
 videos:

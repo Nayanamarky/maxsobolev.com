@@ -2,8 +2,7 @@
 title: "Burger King"
 client: "Burger King"
 year: 2025
-production: "shoot"
-categories: [motion2d]
+categories: [cg]
 cover: "https://maxsobolev-media.b-cdn.net/Burger_King_01.jpg"
 order: 20250101
 videos:

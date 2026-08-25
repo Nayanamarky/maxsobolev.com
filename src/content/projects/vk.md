@@ -2,8 +2,7 @@
 title: "VK"
 client: "VK"
 year: 2024
-production: "shoot"
-categories: [motion2d, vfx]
+categories: [vfx, motion2d]
 cover: "https://maxsobolev-media.b-cdn.net/Vk_video_01.jpg"
 order: 20240101
 videos:

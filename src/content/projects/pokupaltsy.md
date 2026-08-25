@@ -2,8 +2,7 @@
 title: "Покупальцы"
 client: "Покупальцы"
 year: 2024
-production: "cg"
-categories: [character]
+categories: [character, cg]
 cover: "/placeholder/frame-04.jpg"
 order: 20240101
 draft: true

@@ -2,7 +2,6 @@
 title: "М.Видео"
 client: "М.Видео"
 year: 2024
-production: "shoot"
 categories: [vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Mvideo_01.jpg"
 order: 20240101

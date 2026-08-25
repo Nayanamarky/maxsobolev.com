@@ -2,8 +2,7 @@
 title: "Добрый лось"
 client: "Добрый"
 year: 2025
-production: "cg"
-categories: [character]
+categories: [character, cg, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Dobriy_los_01.jpg"
 order: 20250101
 videos:

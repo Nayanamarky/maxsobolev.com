@@ -17,10 +17,11 @@ const projects = defineCollection({
     client: z.string(),
     /** Не всегда известен на момент переноса — пишется как узнается */
     year: z.number().int().optional(),
-    /** Категории фильтра: character (персонажка) | vfx | motion2d (2D motion) | neuro (нейронка) */
-    categories: z.array(z.enum(['character', 'vfx', 'motion2d', 'neuro'])).min(1),
-    /** На чём снято — факт, не фильтр: shoot (съёмка) | cg (full CG). Не всегда известно/применимо. */
-    production: z.enum(['shoot', 'cg']).optional(),
+    /**
+     * Категории фильтра — можно несколько сразу (гибридные проекты):
+     * character (персонажка) | cg (full CG) | vfx (VFX/съёмка) | motion2d (моушен) | neuro (нейронка)
+     */
+    categories: z.array(z.enum(['character', 'cg', 'vfx', 'motion2d', 'neuro'])).min(1),
     /** Кадр-обложка для плитки в сетке */
     cover: z.string(),
     /** Порядок в сетке: меньше — выше */

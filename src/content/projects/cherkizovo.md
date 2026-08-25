@@ -2,8 +2,7 @@
 title: "Черкизово"
 client: "Черкизово"
 year: 2025
-production: "shoot"
-categories: [character]
+categories: [character, cg, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/cherkizovo_01.jpg"
 order: 20250101
 videos:

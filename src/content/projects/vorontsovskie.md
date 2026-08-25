@@ -2,8 +2,7 @@
 title: "Воронцовские"
 client: "Воронцовские"
 year: 2025
-production: "shoot"
-categories: [vfx]
+categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Vorontsovskie_01.jpg"
 order: 20250101
 videos:
