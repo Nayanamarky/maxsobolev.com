@@ -18,15 +18,15 @@ const isRu = locale === 'ru';
   <Header locale={locale} path={path} />
 
   <article class="proj">
+    <img
+      class="portrait"
+      src="https://maxsobolev-media.b-cdn.net/_site/portfolio_01.jpg"
+      alt={isRu ? 'Максим Соболев' : 'Max Sobolev'}
+    />
     <h1>{t('menu.about')}</h1>
     <div class="projmeta mono">{isRu ? 'CG / VFX PRODUCTION SUPERVISOR · МОСКВА' : 'CG / VFX PRODUCTION SUPERVISOR · MOSCOW'}</div>
 
     <div class="body">
-      <img
-        class="portrait"
-        src="https://maxsobolev-media.b-cdn.net/_site/portfolio_01.jpg"
-        alt={isRu ? 'Максим Соболев' : 'Max Sobolev'}
-      />
       {isRu ? (
         <>
           <p>

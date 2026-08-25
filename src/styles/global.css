@@ -152,12 +152,12 @@ header {
 
 .proj .stub { margin-top: 28px; color: var(--dim); font-size: 14px; line-height: 1.6; border-left: 1px solid var(--line); padding-left: 14px }
 
-.proj .body .portrait {
+.proj .portrait {
   width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: none;
-  float: left; margin: 4px 22px 12px 0;
+  float: right; margin: 0 0 12px 22px;
 }
 @media (max-width: 560px) {
-  .proj .body .portrait { float: none; display: block; margin: 0 auto 20px }
+  .proj .portrait { float: none; display: block; margin: 0 auto 20px }
 }
 
 /* тело проекта — рендер markdown-описания из файла */
