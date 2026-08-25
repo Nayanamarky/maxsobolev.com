@@ -1,10 +1,10 @@
 ---
 title: "ОТП"
 client: "ОТП Банк"
-year: 2026
+year: 2025
 categories: [vfx, neuro]
 cover: "https://maxsobolev-media.b-cdn.net/OTP_01.jpg"
-order: 20260101
+order: 20250101
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/821674b4-6198-4cee-b442-bd9af1869a82"
 draft: false
