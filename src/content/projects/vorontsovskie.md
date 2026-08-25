@@ -2,7 +2,7 @@
 title: "Воронцовские"
 client: "Воронцовские"
 year: 2025
-categories: [character, vfx]
+categories: [vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Vorontsovskie_01.jpg"
 order: 20250101
 videos:
@@ -16,5 +16,4 @@ draft: false
 
 <!-- уточнить полное название -->
 
-> Реальная работа, перенесена из «Задачи разработки/03_список_работ.md». Кадры и видео — временно placeholder, заменить когда появятся реальные материалы.
 
