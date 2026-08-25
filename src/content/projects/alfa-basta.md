@@ -4,7 +4,7 @@ client: "Альфа"
 year: 2025
 categories: [motion2d]
 cover: "/placeholder/frame-04.jpg"
-order: 20250101
+order: 20250600
 draft: true
 ---
 

@@ -4,7 +4,7 @@ client: "Альфа"
 year: 2025
 categories: [cg, motion2d]
 cover: "/placeholder/frame-03.jpg"
-order: 20250101
+order: 20250300
 draft: true
 ---
 

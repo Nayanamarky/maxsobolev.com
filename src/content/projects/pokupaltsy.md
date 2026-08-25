@@ -4,7 +4,7 @@ client: "Delivery"
 year: 2022
 categories: [character, cg]
 cover: "https://maxsobolev-media.b-cdn.net/Delivery_01.jpg"
-order: 20220101
+order: 20220600
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/22934e11-cdba-467d-a9d6-be86fe2b7b5b"
 draft: false

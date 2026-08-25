@@ -4,7 +4,7 @@ client: "Без названия — из двух частей"
 year: 2024
 categories: [neuro]
 cover: "/placeholder/frame-04.jpg"
-order: 20240101
+order: 20240300
 draft: true
 ---
 

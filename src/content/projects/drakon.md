@@ -4,7 +4,7 @@ client: "Дракон"
 year: 2024
 categories: [neuro]
 cover: "/placeholder/frame-06.jpg"
-order: 20240101
+order: 20240600
 draft: true
 ---
 

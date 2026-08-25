@@ -4,7 +4,7 @@ client: "Черкизово"
 year: 2025
 categories: [character, cg, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/cherkizovo_01.jpg"
-order: 20250101
+order: 20250900
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/8137e1d9-5742-4529-b1f7-97a30f169f7f"
   - embed: "https://iframe.mediadelivery.net/embed/732977/fa2d6aa6-7d43-488b-b732-a4bd82518e29"
