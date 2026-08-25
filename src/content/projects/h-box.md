@@ -1,10 +1,10 @@
 ---
-title: "H-box"
-client: "H-box"
-year: 2026
-categories: [character]
+title: "Hbox"
+client: "Hbox"
+year: 2024
+categories: [character, vfx]
 cover: "https://maxsobolev-media.b-cdn.net/Hbox_01.jpg"
-order: 20260101
+order: 20240101
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/6f3bbb5d-035b-4de2-9dda-36b0f1dc1761"
     label: { ru: "Главный ролик", en: "Main video" }
