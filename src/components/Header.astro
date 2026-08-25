@@ -27,11 +27,11 @@ const name = locale === 'ru' ? 'МАКСИМ СОБОЛЕВ' : 'MAX SOBOLEV';
 
     <div class="dropdown" id="dropdown">
       {/* вторая, латинская/русская подпись — приём из прототипа; всегда язык, обратный текущему */}
-      <a href={localePath(locale, '/about')}>
-        {t('menu.about')}<span class="en mono">{tOther('menu.about').toUpperCase()}</span>
-      </a>
       <a href={localePath(locale, '/contact')}>
         {t('menu.contact')}<span class="en mono">{tOther('menu.contact').toUpperCase()}</span>
+      </a>
+      <a href={localePath(locale, '/about')}>
+        {t('menu.about')}<span class="en mono">{tOther('menu.about').toUpperCase()}</span>
       </a>
       <a href={localePath(locale, '/posts')}>
         {t('menu.posts')}<span class="en mono">TELEGRAM</span>
