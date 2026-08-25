@@ -1,0 +1,43 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import ToTop from '../components/ToTop.astro';
+import { useTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const path = '/contact';
+const isRu = locale === 'ru';
+---
+
+<Base locale={locale} path={path} title={t('menu.contact')}>
+  <Header locale={locale} path={path} />
+
+  <article class="proj">
+    <h1>{t('menu.contact')}</h1>
+    <div class="projmeta mono">{isRu ? 'МОСКВА · М. ДМИТРОВСКАЯ' : 'MOSCOW · DMITROVSKAYA'}</div>
+
+    <div class="body">
+      {isRu ? (
+        <ul>
+          <li><strong>Telegram</strong> — <a href="https://t.me/nayanamarky" target="_blank" rel="noopener noreferrer">@nayanamarky</a> — предпочтительный способ связи</li>
+          <li><strong>Телефон</strong> — <a href="tel:+79263605977">+7 926 360-59-77</a></li>
+          <li><strong>Почта</strong> — <a href="mailto:nayanamarky@gmail.com">nayanamarky@gmail.com</a></li>
+        </ul>
+      ) : (
+        <ul>
+          <li><strong>Telegram</strong> — <a href="https://t.me/nayanamarky" target="_blank" rel="noopener noreferrer">@nayanamarky</a> — preferred way to reach me</li>
+          <li><strong>Phone</strong> — <a href="tel:+79263605977">+7 926 360-59-77</a></li>
+          <li><strong>Email</strong> — <a href="mailto:nayanamarky@gmail.com">nayanamarky@gmail.com</a></li>
+        </ul>
+      )}
+    </div>
+  </article>
+
+  <footer class="mono">{t('footer')}</footer>
+  <ToTop locale={locale} />
+</Base>

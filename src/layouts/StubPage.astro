@@ -6,7 +6,7 @@ import { useTranslations, type Locale, type UIKey } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
-  page: 'contact' | 'posts';
+  page: 'posts';
 }
 
 const { locale, page } = Astro.props;
@@ -14,7 +14,7 @@ const t = useTranslations(locale);
 const title = t(`menu.${page}` as UIKey);
 const path = `/${page}`;
 
-// Страницы «Обо мне», «Контакты», «Посты» ждут контента — см. «Задачи разработки/02_состояние.md».
+// Страница «Посты» ждёт контента — см. «Задачи разработки/02_состояние.md».
 const stub = locale === 'ru' ? 'Раздел в работе.' : 'Section in progress.';
 ---
 
