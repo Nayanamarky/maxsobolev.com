@@ -154,7 +154,7 @@ header {
 
 .proj .body .portrait {
   width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: none;
-  float: left; shape-outside: circle(50%); margin: 4px 22px 12px 0;
+  float: left; margin: 4px 22px 12px 0;
 }
 @media (max-width: 560px) {
   .proj .body .portrait { float: none; display: block; margin: 0 auto 20px }
