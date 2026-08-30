@@ -6,7 +6,7 @@ categories: [vfx, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Vk_video_01.jpg"
 order: 20230100
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/37508074-c6cb-4c3c-822a-b8de36356522"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvi3bqv5fqbd3ci2xh"
 draft: false
 ---
 
