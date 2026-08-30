@@ -6,10 +6,10 @@ categories: [character, cg, vfx]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/cherkizovo_01.jpg"
 order: 20250900
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/8137e1d9-5742-4529-b1f7-97a30f169f7f"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/fa2d6aa6-7d43-488b-b732-a4bd82518e29"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvxtxizvswi2hmnuls"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvfrcjfhstk4xejl66"
     poster: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/cherkizovo_02.jpg"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/f2e6a179-7c54-4bca-b25d-277c61a7c352"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvzloltqwvt2bm2yfy"
     poster: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/cherkizovo_03.jpg"
 draft: false
 ---

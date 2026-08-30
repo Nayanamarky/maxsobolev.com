@@ -6,7 +6,7 @@ categories: [cg, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Liga_stavok_01.jpg"
 order: 20230800
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/2fc95766-4b18-416a-818e-1d001248c61b"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplv2xi727ksghbah4r2"
 draft: false
 ---
 

@@ -6,7 +6,7 @@ categories: [vfx]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Tmobile_01.jpg"
 order: 20260300
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/35d31f2d-0298-4fd9-a0aa-fac60ae36907"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvn5e7fndxwao6xafx"
 draft: false
 ---
 

@@ -6,8 +6,8 @@ categories: [cg, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Tnt_alfa_01.jpg"
 order: 20250300
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/31b16a6f-94f9-4441-9ccd-97d219699e9f"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/50ac60ec-93c7-4a61-9192-2a53104c930e"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvhreoa4cqjv5knegi"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvvogfa6py534omet5"
     poster: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Tnt_alfa_02.jpg"
 draft: false
 ---

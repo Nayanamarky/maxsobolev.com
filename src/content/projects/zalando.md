@@ -6,7 +6,7 @@ categories: [vfx, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Zalando_01.jpg"
 order: 20210300
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/c036ec56-ca2a-45bc-a31d-448d68c5f01f"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvsloaqth5rf4lygnh"
 draft: false
 ---
 

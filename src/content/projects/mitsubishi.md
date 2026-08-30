@@ -6,7 +6,7 @@ categories: [character, vfx]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Mitsubishi_01.jpg"
 order: 20210900
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/ae275522-3aab-40ac-8ec6-b712b84aceb6"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvfzeyapc5eap6qrgl"
 draft: false
 ---
 

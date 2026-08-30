@@ -6,8 +6,8 @@ categories: [character, cg]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Chistaya_Liniya_01.jpg"
 order: 20220300
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/2332e265-82c3-4aa8-a5e9-60e8153fc323"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/af759320-94c3-43d4-9a21-ece307bdd21a"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvjha2kp3drwe5phhf"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvmoflfl2aqxcu7wkp"
 draft: false
 ---
 

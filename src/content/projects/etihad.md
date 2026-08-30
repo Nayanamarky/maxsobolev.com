@@ -6,7 +6,7 @@ categories: [motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Etisalat_01.jpg"
 order: 20230500
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/1d39aabc-b162-445f-9976-3cd49fab507d"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvtlkle5s6dmgptszf"
 draft: false
 ---
 

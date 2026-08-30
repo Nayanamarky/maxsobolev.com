@@ -6,7 +6,7 @@ categories: [character, cg, neuro]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Zemma_01.jpg"
 order: 20260600
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/1df8e8bd-42c4-490a-ba46-8e8590562ef6"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvq3x4hysbt4xcq3b7"
 draft: false
 ---
 

@@ -6,8 +6,8 @@ categories: [vfx, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Curtis_01.jpg"
 order: 20230700
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/401be32c-76fa-4d3d-b282-02f32e63d621"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/4db173ec-9b4e-4c77-b964-3748b2793c60"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvuhl6howeopjbztr2"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvjreecfwlmbvpssst"
     poster: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Curtis_02.jpg"
 draft: false
 ---

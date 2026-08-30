@@ -6,7 +6,7 @@ categories: [vfx, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Yandex_Lavka_01.jpg"
 order: 20241000
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/5e413524-7092-49b1-b177-ec1492ff47c0"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvvvltwd4sbhv67fdf"
 draft: false
 ---
 

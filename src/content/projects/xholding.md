@@ -6,8 +6,8 @@ categories: [character, cg, motion2d, neuro]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Xholding_01.jpg"
 order: 20230400
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/5ffc1bab-980e-4542-b458-8768bd60674a"
-  - embed: "https://iframe.mediadelivery.net/embed/732977/446da485-3562-473e-a59f-5f36228b5019"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplveyn4xhmky5vzautx"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvqsbgym75mw3ms4j5"
 draft: false
 ---
 

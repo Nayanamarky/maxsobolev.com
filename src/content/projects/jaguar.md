@@ -6,7 +6,7 @@ categories: [character, vfx]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Jaguar_01.jpg"
 order: 20230300
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/556cc6a5-c6dd-46cb-8cea-06b0eb6ad329"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvfiuo6qqsdr33xigf"
 draft: false
 ---
 

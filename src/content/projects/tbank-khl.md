@@ -6,7 +6,7 @@ categories: [cg, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/TBank_KHL_01.jpg"
 order: 20250800
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/363e4adb-4238-475d-bfec-422d81edc338"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplv7bklvzh3trdavt3h"
 draft: false
 ---
 

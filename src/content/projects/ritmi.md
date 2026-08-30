@@ -6,7 +6,7 @@ categories: [character, cg, vfx, motion2d]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Ritmi_01.jpg"
 order: 20220400
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/05b4a6ae-d11d-41a1-8617-c27a96e1a48d"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvxiygklwpbovpti45"
 draft: false
 ---
 

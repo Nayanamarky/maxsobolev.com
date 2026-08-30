@@ -6,7 +6,7 @@ categories: [character, cg]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Delivery_01.jpg"
 order: 20220600
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/22934e11-cdba-467d-a9d6-be86fe2b7b5b"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvl6khdtiwl2erjxhw"
 draft: false
 ---
 
