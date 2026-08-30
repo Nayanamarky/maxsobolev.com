@@ -17,13 +17,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      # npm install, не npm ci: package-lock.json фиксировался локально на Windows,
-      # а рантайм зависимости Astro (Rollup/esbuild) платформо-зависимые — при
-      # несовпадении ОС между генерацией лока и CI известный баг npm не подтягивает
-      # нужные бинарники для Linux. npm install разрешает их заново под текущую ОС.
-      - run: npm install
+      - run: npm ci
       - run: npm run build
 
       - name: Sync dist/ to Yandex Object Storage
