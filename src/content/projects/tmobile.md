@@ -3,7 +3,7 @@ title: "Безлимит"
 client: "Т-Мобайл"
 year: 2026
 categories: [vfx]
-cover: "https://maxsobolev-media.b-cdn.net/_media_covers/Tmobile_01.jpg"
+cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Tmobile_01.jpg"
 order: 20260300
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/35d31f2d-0298-4fd9-a0aa-fac60ae36907"

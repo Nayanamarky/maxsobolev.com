@@ -3,7 +3,7 @@ title: "Вкусовые сосочки"
 client: "Чистая Линия"
 year: 2022
 categories: [character, cg]
-cover: "https://maxsobolev-media.b-cdn.net/_media_covers/Chistaya_Liniya_01.jpg"
+cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Chistaya_Liniya_01.jpg"
 order: 20220300
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/2332e265-82c3-4aa8-a5e9-60e8153fc323"

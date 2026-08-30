@@ -3,7 +3,7 @@ title: "Покупальцы"
 client: "Delivery"
 year: 2022
 categories: [character, cg]
-cover: "https://maxsobolev-media.b-cdn.net/_media_covers/Delivery_01.jpg"
+cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Delivery_01.jpg"
 order: 20220600
 videos:
   - embed: "https://iframe.mediadelivery.net/embed/732977/22934e11-cdba-467d-a9d6-be86fe2b7b5b"
