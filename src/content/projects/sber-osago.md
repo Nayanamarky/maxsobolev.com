@@ -6,7 +6,7 @@ categories: [cg, vfx]
 cover: "https://storage.yandexcloud.net/maxsobolev-media/_media_covers/Sber_osago_01.jpg"
 order: 20251100
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/de5bd356-1533-4878-8e97-a5852f87cf5f"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplv6njz536mzvwn7ftn"
 draft: false
 ---
 

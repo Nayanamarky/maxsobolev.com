@@ -6,7 +6,7 @@ categories: [character]
 cover: "/placeholder/frame-03.jpg"
 order: 20240200
 videos:
-  - embed: "https://iframe.mediadelivery.net/embed/732977/1d0882d6-aa46-4c31-b8aa-5bc60caff310"
+  - embed: "https://runtime.video.cloud.yandex.net/player/video/vplvwrtd5vjnlbzp5rtd"
 draft: true
 ---
 
