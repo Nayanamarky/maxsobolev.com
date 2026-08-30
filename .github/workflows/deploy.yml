@@ -1,0 +1,33 @@
+name: Deploy to Yandex Object Storage
+
+# При каждом пуше в main: собрать сайт и залить dist/ в бакет Yandex Object Storage.
+# Нужны секреты репозитория (Settings → Secrets and variables → Actions):
+#   YC_ACCESS_KEY_ID, YC_SECRET_ACCESS_KEY — статический ключ сервисного аккаунта
+#   YC_BUCKET_NAME — имя бакета
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Sync dist/ to Yandex Object Storage
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 sync ./dist "s3://${{ secrets.YC_BUCKET_NAME }}" \
+            --endpoint-url=https://storage.yandexcloud.net \
+            --acl public-read \
+            --delete
